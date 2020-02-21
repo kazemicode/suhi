@@ -1,0 +1,42 @@
+uuid: 8f062d55-fd18-49c5-8da1-c8d90726183a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.course.body
+    - field.field.node.course.field_a_g
+    - field.field.node.course.field_course_number
+    - field.field.node.course.field_grade_level
+    - field.field.node.course.field_graduation_requirement
+    - field.field.node.course.field_other_attributes
+    - field.field.node.course.field_video_link
+    - node.type.course
+  module:
+    - text
+    - user
+id: node.course.teaser
+targetEntityType: node
+bundle: course
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_a_g: true
+  field_course_number: true
+  field_grade_level: true
+  field_graduation_requirement: true
+  field_other_attributes: true
+  field_video_link: true

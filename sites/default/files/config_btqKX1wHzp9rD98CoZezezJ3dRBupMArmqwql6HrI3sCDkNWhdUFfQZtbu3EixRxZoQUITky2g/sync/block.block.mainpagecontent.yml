@@ -1,0 +1,28 @@
+uuid: 4b61297e-b87f-448b-b3eb-1f2bb153fdb0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+  theme:
+    - bootstrap_barrio_subtheme
+id: mainpagecontent
+theme: bootstrap_barrio_subtheme
+region: highlighted
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: Students
+  provider: system
+  label_display: visible
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,23 @@
+uuid: aac58e36-2aef-4028-be13-58e530252d69
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bootstrap_barrio_subtheme
+id: sitebranding
+theme: bootstrap_barrio_subtheme
+region: secondary_menu
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: Logo
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

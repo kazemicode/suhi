@@ -1,0 +1,8 @@
+uuid: 7ea9b482-6aff-4146-87b0-a2fec503bb4a
+langcode: en
+status: true
+dependencies: {  }
+name: 'A-G Category'
+vid: a_g_category
+description: 'The A-G / College Entrance Requirement Category the course fulfills '
+weight: 2

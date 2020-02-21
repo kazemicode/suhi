@@ -1,0 +1,29 @@
+uuid: c6303c99-fc55-4355-9bb7-8e4ce23a6e6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grade_level
+    - node.type.course
+    - taxonomy.vocabulary.grade_level
+id: node.course.field_grade_level
+field_name: field_grade_level
+entity_type: node
+bundle: course
+label: 'Grade Level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      grade_level: grade_level
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

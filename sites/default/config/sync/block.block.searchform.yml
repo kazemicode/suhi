@@ -1,0 +1,21 @@
+uuid: 30976049-5a45-45a3-8a15-4718877d8709
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - bootstrap_barrio_subtheme
+id: searchform
+theme: bootstrap_barrio_subtheme
+region: featured_top
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search for a course'
+  provider: search
+  label_display: visible
+  page_id: ''
+visibility: {  }

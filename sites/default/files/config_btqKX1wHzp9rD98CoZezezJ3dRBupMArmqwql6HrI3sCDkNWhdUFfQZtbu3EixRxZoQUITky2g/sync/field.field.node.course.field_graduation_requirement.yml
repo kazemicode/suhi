@@ -1,0 +1,21 @@
+uuid: 09bb2f07-1a97-4bba-8637-65723a69b098
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_graduation_requirement
+    - node.type.course
+id: node.course.field_graduation_requirement
+field_name: field_graduation_requirement
+entity_type: node
+bundle: course
+label: 'Graduation Requirement'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings: {  }
+field_type: entity_reference

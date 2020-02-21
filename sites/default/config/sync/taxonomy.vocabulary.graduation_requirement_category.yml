@@ -1,0 +1,8 @@
+uuid: f2e3b4ed-9869-42ca-aaf3-7a94b256e6fe
+langcode: en
+status: true
+dependencies: {  }
+name: 'Graduation Requirement Category'
+vid: graduation_requirement_category
+description: 'Category satisfied for graduation requirements'
+weight: 1

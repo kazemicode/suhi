@@ -1,0 +1,10 @@
+uuid: 53df0c41-cfbe-4980-ad47-cfeaa3e680fc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yoNVreoTdTZTY7GuE8fI9Jmxqdz8vlo4ZJKixMNSosw
+name: 'Course Qualifiers'
+vid: tags
+description: 'Other attributes of course'
+weight: 3

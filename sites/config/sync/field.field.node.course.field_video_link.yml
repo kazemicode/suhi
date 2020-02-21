@@ -1,0 +1,23 @@
+uuid: ca38253b-3b30-403a-a657-505f7cc31211
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_link
+    - node.type.course
+  module:
+    - link
+id: node.course.field_video_link
+field_name: field_video_link
+entity_type: node
+bundle: course
+label: Video_Link
+description: 'Insert YouTube link about course if one exists'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

@@ -1,0 +1,8 @@
+uuid: 3346f54d-90ec-4ad3-8d50-6cebede65d03
+langcode: en
+status: true
+dependencies: {  }
+name: Grade-level
+vid: grade_level
+description: 'Grade-levels during which a course can be taken'
+weight: 0
