@@ -21,7 +21,7 @@ bundle: course
 mode: default
 content:
   body:
-    label: hidden
+    label: inline
     type: text_default
     weight: 101
     settings: {  }
@@ -29,7 +29,7 @@ content:
     region: content
   field_a_g:
     weight: 104
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
@@ -46,7 +46,7 @@ content:
     region: content
   field_grade_level:
     weight: 105
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
@@ -54,7 +54,7 @@ content:
     region: content
   field_graduation_requirement:
     weight: 108
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
@@ -62,7 +62,7 @@ content:
     region: content
   field_other_attributes:
     weight: 106
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
@@ -70,7 +70,7 @@ content:
     region: content
   field_video_link:
     weight: 103
-    label: above
+    label: inline
     settings:
       trim_length: 80
       url_only: false
@@ -82,7 +82,7 @@ content:
     region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }
