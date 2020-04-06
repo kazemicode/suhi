@@ -33,3 +33,35 @@ function barrio_custom_form_system_theme_settings_alter(&$form, FormStateInterfa
       'bg-transparent' => t('Transparent'),
   );
 }
+
+
+
+
+
+function barrio_custom_preprocess_form_element(&$variables) {
+  if (isset($variables['label']['#title'])) {
+    if ( is_object($variables['label']['#title']) && !$variables['label']['#title'] instanceof \Drupal\Component\Render\MarkupInterface) {
+      $variables['input_title'] = NULL;
+    }
+    elseif ( is_object($variables['label']['#title']) ) {
+      $variables['input_title'] = $variables['label']['#title'];
+    }
+    else {
+      $variables['input_title'] = $variables['label']['#title'];
+    }
+  }
+  if (isset($variables['element']['#attributes'])) {
+    $variables['input_attributes'] = new Attribute($variables['element']['#attributes']);
+  }
+  switch ($variables['type']) {
+    case 'checkbox':
+      $variables['customtype'] = theme_get_setting('bootstrap_barrio_checkbox');
+      break;
+    case 'radio':
+      $variables['customtype'] = theme_get_setting('bootstrap_barrio_radio');
+      break;
+    default:
+      break;
+  }
+}
+

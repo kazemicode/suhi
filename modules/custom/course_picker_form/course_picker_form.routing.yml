@@ -1,0 +1,7 @@
+course_picker_form.course_picker_form:
+  path: '/course-picker'
+  defaults:
+    _form: '\Drupal\course_picker_form\Form\CoursePickerForm'
+    _title: 'Course Picker'
+  requirements:
+    _permission: 'access content'

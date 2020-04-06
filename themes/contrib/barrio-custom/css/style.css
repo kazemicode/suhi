@@ -3,3 +3,7 @@
  * Subtheme specific CSS.
  */
 
+
+.slide__caption {
+    border-style: solid red;
+}

@@ -1,0 +1,9 @@
+block.testing:
+  path: '/testing'
+  defaults:
+    _controller: 'Drupal\test_module\Controller\MyController::test'
+    _title: 'GENERIC TITLE'
+  requirements:
+    _permission: 'administer blocks'
+  options:
+    _admin_route: FALSE

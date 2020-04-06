@@ -12,16 +12,30 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+          "type": "composer",
+          "url": "https://asset-packagist.org"
         }
     ],
     "require": {
         "composer/installers": "^1.2",
+        "drupal/block_styles": "^1.2",
         "drupal/bootstrap_barrio": "^4.22",
+        "drupal/bootstrap_sass": "^1.9",
+        "drupal/console": "~1.0",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/core-vendor-hardening": "^8.8",
-        "drupal/paragraphs": "^1.11"
+        "drupal/ds": "^3.5",
+        "drupal/paragraphs": "^1.11",
+        "drupal/search_api": "^1.15",
+        "drupal/slick": "^2.1",
+        "drupal/slick_views": "^2.2",
+        "npm-asset/blazy": "^1.8",
+        "npm-asset/slick-carousel": "^1.8",
+        "oomphinc/composer-installers-extender": "^1.1"
     },
     "require-dev": {
     },
@@ -39,6 +53,7 @@
                 "web-root": "./"
             }
         },
+        "installer-types": ["bower-asset", "npm-asset"],
         "installer-paths": {
             "core": ["type:drupal-core"],
             "libraries/{$name}": ["type:drupal-library"],
@@ -47,7 +62,9 @@
             "themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
             "modules/custom/{$name}": ["type:drupal-custom-module"],
-            "themes/custom/{$name}": ["type:drupal-custom-theme"]
+            "themes/custom/{$name}": ["type:drupal-custom-theme"],
+            "web/libraries/slick" : ["npm-asset/slick-carousel"],
+            "web/libraries/{$name}/": ["type:bower-asset", "type:npm-asset"]
         },
         "drupal-core-project-message": {
             "include-keys": ["homepage", "support"],

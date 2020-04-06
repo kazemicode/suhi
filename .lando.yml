@@ -1,4 +1,8 @@
-name: my-first-drupal8-app
+name: myfirstdrupal8app
 recipe: drupal8
-config:
-  webroot: .
+services:
+  appserver:
+    webroot: .
+    xdebug: true
+    config: 
+      php: ../.vscode/php.ini
