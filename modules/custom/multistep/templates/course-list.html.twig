@@ -1,0 +1,27 @@
+<h3>Select an English course</h3>
+ 
+<p>Results for Grade {{ grade + 1 }} fullfilling the English requirement</p>
+
+<table style="width:100%">
+<tr>
+    <th></th>
+    <th>Course title</th>
+    <th>Description</th>
+    <th>A-G Requirement</th>
+  </tr>
+{% for result in results %}
+    <tr>
+    <td><div class="form-check">
+  <input class="form-check-input" type="radio" name="englishClass" value="{{result.field_course_number[0].value}}">
+</div></td>
+    <td>{{ result.title[0].value}} ({{result.field_course_number[0].value}})</td>
+    <td>{{ result.body[0].value|striptags}}  </td>
+    <td>
+    {% if result.field_a_g[0] is not null %}
+    {{dump(result.field_a_g[0].label())}}</td>
+    {% endif %}
+  </tr>
+{% endfor %}
+</table>
+
+

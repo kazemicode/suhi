@@ -1,5 +1,90 @@
+
 /**
  * @file
  * Subtheme specific CSS.
  */
 
+ :root {
+     --red-devil-dark: #6c0000;
+     --red-devil-bright: #c01111;
+ }
+
+ /* Page content spacing */
+ #block-barrio-custom-mainpagecontent h2 {
+    margin-left: 1rem;
+}
+
+.header {
+    margin-bottom: 1rem;
+}
+
+
+/* Hero CSS */
+.slide__description {
+    background-color: rgba(255,255,255,0.7);
+    padding: 2rem;
+}
+
+.hero-link a::after {
+    content: "  →";
+}
+
+
+/* Course Search */
+.form-item-search-api-fulltext label {
+    font-weight: bolder;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+
+/* Course View custom CSS */
+.course-heading {
+    float: left;
+    width: 100%;
+    margin-right: 2rem;
+}
+
+.course-heading .field__item{
+    float: left;
+    margin-right: 1rem;
+}
+
+.field__item p {
+    margin: 1rem;
+}
+
+.card-header-title {
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+
+/* Resources */
+/* Grad Requirements */
+.container-grad-reqs h2::before {
+    box-sizing: border-box;
+    background-color: var(--red-devil-bright);
+    left: 0;
+    top: 0;
+    content: '';
+    height: 6px;
+    width: 113px;
+    position: absolute;
+}
+
+.container-grad-reqs {
+    position: relative;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.grad-reqs-summary {
+    margin-bottom: 2rem; 
+}
+
+.grad-reqs-description {
+    margin: 1rem; 
+    padding: 1rem;
+    background-color: #eeeeee;
+}

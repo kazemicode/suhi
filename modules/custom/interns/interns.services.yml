@@ -1,0 +1,7 @@
+services:
+  logger.channel.interns:
+    parent: logger.channel_base
+    arguments: ['interns']
+  interns.default:
+    class: Drupal\interns\DefaultService
+    arguments: []

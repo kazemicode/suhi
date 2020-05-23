@@ -1,0 +1,23 @@
+multistep.multistep_init:
+  path: '/courses/welcome'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepInitForm'
+    _title: 'Initial info form'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_info:
+  path: '/courses/coursepicker'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepInfoForm'
+    _title: 'Second info form'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_english_class:
+  path: '/courses/english'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepEnglishForm'
+    _title: 'English class picker form'
+  requirements:
+    _permission: 'access content'

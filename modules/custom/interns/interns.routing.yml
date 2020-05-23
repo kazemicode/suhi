@@ -1,0 +1,9 @@
+interns.testing:
+  path: '/interns'
+  defaults:
+    _controller: 'Drupal\interns\InternsController::test'
+    _title: 'GENERIC INTERNS TITLE'
+  requirements:
+    _permission: 'administer blocks'
+  options:
+    _admin_route: FALSE

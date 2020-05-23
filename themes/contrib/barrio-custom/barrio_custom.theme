@@ -33,3 +33,30 @@ function barrio_custom_form_system_theme_settings_alter(&$form, FormStateInterfa
       'bg-transparent' => t('Transparent'),
   );
 }
+
+/**
+ * @param $suggestions
+ * @param array $variables
+ */
+function barrio_custom_theme_suggestions_input_alter(&$suggestions, array $variables) {
+  $element = $variables['element'];
+
+  if (isset($element['#attributes']['data-twig-suggestion'])) {
+    $suggestions[] = 'input__' . $element['#type'] . '__' . $element['#attributes']['data-twig-suggestion'];
+  }
+}
+
+/**
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+
+function  barrio_custom_form_alter( &$form, FormStateInterface &$form_state, $form_id ) {
+  if ($form_id == 'search_block_form') {
+    $form['search_block_form']['#attributes']['placeholder'] = t('search');
+  }
+}
+
+
+

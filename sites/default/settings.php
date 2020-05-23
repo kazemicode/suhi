@@ -706,6 +706,12 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
  */
+/* $settings['trusted_host_patterns'] = [
+  '^'.getenv('my-first-drupal8-app').'\.lndo\.site$',      # lando proxy access
+  '^localhost$',                                     # localhost access
+  '^'.getenv('my-first-drupal8-app').'\.localtunnel\.me$', # lando share access
+  '^192\.168\.1\.100$'                               # LAN IP access
+]; */
 
 /**
  * The default list of directories that will be ignored by Drupal's file API.

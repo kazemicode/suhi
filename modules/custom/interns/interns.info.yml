@@ -1,0 +1,4 @@
+name: 'Interns'
+type: module
+description: 'This is the interns module.'
+core: 8.x
