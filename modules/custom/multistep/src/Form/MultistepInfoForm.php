@@ -23,75 +23,62 @@ class MultistepInfoForm extends MultistepFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
+    $first_name = $this->store->get('first_name');
+
     $form = parent::buildForm($form, $form_state);
 
-    $form['grade_level'] = array(
-      '#type' => 'select',
-      '#title' => $this->t('Which grade will you be entering in the upcoming school year?'),
-      '#options' => [
-        '8' => $this
-          ->t('9th (Freshman)'),
-        '9' => $this
-          ->t('10th (Sophomore)'),
-        '10' => $this
-        ->t('11th (Junior)'),
-        '11' => $this
-        ->t('12th (Senior)'),
-      ],
-      '#required' => TRUE,
+    $form['message-step'] = [
+      '#markup' => '<div class="step">' . $this->t('Step 2 of 8') . '</div>',
+    ];
+
+    $form['message-title'] = [
+      '#markup' => '<div class="form-header"><h2>' . $this->t('Course Scheduling Wizard') . '</h2></div>'
+    ];
+
+    $form['message-instructions'] = [
+      '#markup' => '<div class="form-instructions"><h4>' . $this->t('Thank you, <span class="name">')  . $first_name . $this->t('</span>! Next, we need to know about any special types of courses you may prefer.') . '</h4></div>',
+    ];
+
+    $form['prefs'] = array (
+      '#type' => 'fieldset',
+      '#title' => t('Select all that apply.'),
+      '#attributes' => [
+        'class' => [
+          'form-container',
+        ]]
     );
 
-    $form['isAP'] = array(
-      '#type' => 'select',
-      '#title' => $this->t('Are you interested in taking AP (Advanced Placement) courses?'),
-      '#options' => [
-        '1' => $this
-          ->t('Yes'),
-        '0' => $this
-          ->t('No'),
-      ],
-      '#required' => TRUE,
+    $form['prefs']['isAP'] = array(
+      '#type' => 'checkbox',
+      '#title' => $this->t('I am interested in Honors or AP (Advanced Placement) courses.'),
+      '#default_value' => 0,
+      '#return_value' => 1,
+      '#required' => FALSE,
     );
 
-    $form['isFund'] = array(
-        '#type' => 'select',
-        '#title' => $this->t('Are you currently enrolled in the Fundamentals program?'),
-        '#options' => [
-          '1' => $this
-            ->t('Yes'),
-          '0' => $this
-            ->t('No'),
-        ],
-        '#required' => TRUE,
+    $form['prefs']['isFund'] = array(
+        '#type' => 'checkbox',
+        '#title' => $this->t('I am enrolled in the Fundamentals program.'),
+        '#default_value' => 0,
+        '#return_value' => 1,
+        '#required' => FALSE,
       );
 
-    $form['isELD'] = array(
-      '#type' => 'select',
-      '#title' => $this->t('Are you currently enrolled in ELD (English Language Development) I, II, or III?'),
-      '#options' => [
-        '1' => $this
-          ->t('Yes'),
-        '0' => $this
-          ->t('No'),
-      ],
-      '#required' => TRUE,
+    $form['prefs']['isELD'] = array(
+      '#type' => 'checkbox',
+      '#title' => $this->t('I will be enrolled in ELD next academic year.'),
+      '#default_value' => 0,
+      '#return_value' => 1,
+      '#required' => FALSE,
     );
 
-  
 
     $form['actions']['submit']['#value'] = $this->t('Next');
 
-
     $form['actions']['previous'] = array(
-      '#type' => 'link',
-      '#title' => $this->t('Previous'),
-      '#attributes' => array(
-        'class' => array('button'),
-      ),
-      '#weight' => 0,
-      '#url' => Url::fromRoute('multistep.multistep_init'),
-    );
-
+      '#type' => 'submit',
+      '#value' => $this->t('Previous'),
+     );
 
     return $form;
   }
@@ -100,11 +87,15 @@ class MultistepInfoForm extends MultistepFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->store->set('grade_level', $form_state->getValue('grade_level'));
     $this->store->set('isAP', $form_state->getValue('isAP'));
     $this->store->set('isFund', $form_state->getValue('isFund'));
     $this->store->set('isELD', $form_state->getValue('isELD'));
-    $form_state->setRedirect('multistep.multistep_english_class');
+ 
+    if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
+      $form_state->setRedirect('multistep.multistep_english_class_form');
+    }
+    else {
+      $form_state->setRedirect('multistep.multistep_init_form');
+    }
   }
-  
 }

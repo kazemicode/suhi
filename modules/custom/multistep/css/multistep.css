@@ -1,0 +1,74 @@
+:root {
+    --red-devil-dark: #6c0000;
+    --red-devil-bright: #c01111;
+}
+
+.step {
+    position: relative;
+    float: right;
+}
+
+.form-header{
+    position: relative;
+}
+
+.form-header h2 {
+    margin-top:1rem;
+
+}
+
+.form-instructions h4 {
+    padding-top:1rem;
+    padding-bottom:.5rem;
+
+}
+
+.form-instructions h4::before {
+    box-sizing: border-box;
+    background-color: var(--red-devil-bright);
+    left: 0;
+    top: 0;
+    content: '';
+    height: 6px;
+    width: 113px;
+    position: absolute;
+ }
+
+ .form-instructions {
+    position: relative;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+ }
+
+ .name {
+     color: var(--red-devil-bright);
+ }
+
+ .form-container {
+     border-width: .5rem;
+     padding: 1.5rem;
+     border: solid;
+     border-color: #f8f9fa;
+     position: relative;
+     margin: .5rem;
+ }
+
+ .form-container::before {
+     box-sizing: border-box;
+ }
+
+ .form-container::after {
+    box-sizing: border-box;
+}
+
+ .form-group label {
+     font-weight: bolder;
+ }
+
+ #edit-submit {
+    margin-top:1rem; 
+ }
+
+ #edit-previous {
+    margin-top:1rem; 
+ }

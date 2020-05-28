@@ -1,4 +1,4 @@
-multistep.multistep_init:
+multistep.multistep_init_form:
   path: '/courses/welcome'
   defaults:
     _form: '\Drupal\multistep\Form\MultistepInitForm'
@@ -6,15 +6,15 @@ multistep.multistep_init:
   requirements:
     _permission: 'access content'
 
-multistep.multistep_info:
-  path: '/courses/coursepicker'
+multistep.multistep_info_form:
+  path: '/courses/wizard'
   defaults:
     _form: '\Drupal\multistep\Form\MultistepInfoForm'
     _title: 'Second info form'
   requirements:
     _permission: 'access content'
 
-multistep.multistep_english_class:
+multistep.multistep_english_class_form:
   path: '/courses/english'
   defaults:
     _form: '\Drupal\multistep\Form\MultistepEnglishForm'
