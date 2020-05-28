@@ -1,0 +1,4 @@
+multistep_form:
+  css:
+    theme:
+      css/multistep.css: {}

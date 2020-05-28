@@ -12,17 +12,22 @@ use Drupal\Core\Form\FormStateInterface;
 // /**
 // * Implementation of hook_form_FORM_ID_alter().
 // */
-// function multistep_form_alter(&$form, FormStateInterface &$form_state) {
-//   //$form['mail']['#title'] = t('email');
-// }
+function multistep_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+   // $form['#attached']['library'][] = '/multistep/multistep_form';
+ }
 
 function multistep_theme($existing, $type, $theme, $path) {
     return [
         'course_list'  => [ 
             'variables' => [
                 'grade' => NULL,
-                'results' => NULL
-            ],
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL
+            ]
+        ],
 
-    ]];
+    ];
 }
