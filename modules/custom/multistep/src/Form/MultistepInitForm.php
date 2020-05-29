@@ -123,10 +123,11 @@ class MultistepInitForm extends MultistepFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->store->set('first_name', $form_state->getValue('first_name'));
-    $this->store->set('last_name', $form_state->getValue('last_name'));
-    $this->store->set('student_id', $form_state->getValue('student_id'));
-    $this->store->set('grade_level', $form_state->getValue('grade_level'));
+
+    $keys = ['first_name', 'last_name', 'student_id', 'grade_level'];
+    foreach ($keys as $key) {
+      $this->store->set($key, $form_state->getValue($key));
+    }
     $form_state->setRedirect('multistep.multistep_info_form');
   }
 }

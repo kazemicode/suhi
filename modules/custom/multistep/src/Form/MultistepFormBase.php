@@ -23,7 +23,7 @@ abstract class MultistepFormBase extends FormBase {
   /**
    * @var \Drupal\Core\Session\SessionManagerInterface
    */
-  private $sessionManager;
+  protected $sessionManager;
 
   /**
    * @var \Drupal\Core\Session\AccountInterface
