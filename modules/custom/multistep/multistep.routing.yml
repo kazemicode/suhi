@@ -2,7 +2,7 @@ multistep.multistep_init_form:
   path: '/courses/welcome'
   defaults:
     _form: '\Drupal\multistep\Form\MultistepInitForm'
-    _title: 'Initial info form'
+    _title: 'SUHI Wizard - Welcome'
   requirements:
     _permission: 'access content'
 
@@ -10,7 +10,7 @@ multistep.multistep_info_form:
   path: '/courses/wizard'
   defaults:
     _form: '\Drupal\multistep\Form\MultistepInfoForm'
-    _title: 'Second info form'
+    _title: 'SUHI Wizard - Info'
   requirements:
     _permission: 'access content'
 
@@ -18,6 +18,94 @@ multistep.multistep_english_class_form:
   path: '/courses/english'
   defaults:
     _form: '\Drupal\multistep\Form\MultistepEnglishForm'
-    _title: 'English class picker form'
+    _title: 'SUHI Wizard - English'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_math_class_form:
+  path: '/courses/math'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepMathForm'
+    _title: 'SUHI Wizard - Math'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_ss_class_form:
+  path: '/courses/ss'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepSSForm'
+    _title: 'SUHI Wizard - Social Science'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_sci_class_form:
+  path: '/courses/sci'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepSciForm'
+    _title: 'SUHI Wizard - Science'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_pe_class_form:
+  path: '/courses/pe'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepPEForm'
+    _title: 'SUHI Wizard - PE'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_vapa_class_form:
+  path: '/courses/vapa'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepVAPAForm'
+    _title: 'SUHI Wizard - VAPA'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_lang_class_form:
+  path: '/courses/lang'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepLangForm'
+    _title: 'SUHI Wizard - World Languages'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_cpe_class_form:
+  path: '/courses/cpe'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepCPEForm'
+    _title: 'SUHI Wizard - College Prep Electives'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_elective_class_form:
+  path: '/courses/electives'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepElectiveForm'
+    _title: 'SUHI Wizard - Electives'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_health_class_form:
+  path: '/courses/health'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepHealthForm'
+    _title: 'SUHI Wizard - Health'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_final_form:
+  path: '/courses/review'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepFinalForm'
+    _title: 'SUHI Wizard - Review'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_success:
+  path: '/courses/success'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepSuccess'
+    _title: 'SUHI Wizard - Successfully Submitted'
   requirements:
     _permission: 'access content'

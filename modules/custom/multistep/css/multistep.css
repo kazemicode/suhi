@@ -72,3 +72,8 @@
  #edit-previous {
     margin-top:1rem; 
  }
+
+ .edit-english {
+     visibility: hidden;
+    
+ }

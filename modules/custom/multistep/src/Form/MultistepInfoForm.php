@@ -28,7 +28,7 @@ class MultistepInfoForm extends MultistepFormBase {
     $form = parent::buildForm($form, $form_state);
 
     $form['message-step'] = [
-      '#markup' => '<div class="step">' . $this->t('Step 2 of 8') . '</div>',
+      '#markup' => '<div class="step">' . $this->t('Step 2 of 12') . '</div>',
     ];
 
     $form['message-title'] = [
@@ -51,7 +51,7 @@ class MultistepInfoForm extends MultistepFormBase {
     $form['prefs']['isAP'] = array(
       '#type' => 'checkbox',
       '#title' => $this->t('I am interested in Honors or AP (Advanced Placement) courses.'),
-      '#default_value' => 0,
+      '#default_value' => $this->store->get('isAP') ? $this->store->get('isAP') : 0,
       '#return_value' => 1,
       '#required' => FALSE,
     );
@@ -59,7 +59,7 @@ class MultistepInfoForm extends MultistepFormBase {
     $form['prefs']['isFund'] = array(
         '#type' => 'checkbox',
         '#title' => $this->t('I am enrolled in the Fundamentals program.'),
-        '#default_value' => 0,
+        '#default_value' => $this->store->get('isFund') ? $this->store->get('isFund') : 0,
         '#return_value' => 1,
         '#required' => FALSE,
       );
@@ -67,10 +67,12 @@ class MultistepInfoForm extends MultistepFormBase {
     $form['prefs']['isELD'] = array(
       '#type' => 'checkbox',
       '#title' => $this->t('I will be enrolled in ELD next academic year.'),
-      '#default_value' => 0,
+      '#default_value' => $this->store->get('isELD') ? $this->store->get('isELD') : 0,
       '#return_value' => 1,
       '#required' => FALSE,
     );
+
+  
 
 
     $form['actions']['submit']['#value'] = $this->t('Next');
@@ -87,9 +89,12 @@ class MultistepInfoForm extends MultistepFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->store->set('isAP', $form_state->getValue('isAP'));
-    $this->store->set('isFund', $form_state->getValue('isFund'));
-    $this->store->set('isELD', $form_state->getValue('isELD'));
+
+    $keys = ['isAP', 'isFund', 'isELD'];
+    foreach ($keys as $key) {
+      $this->store->set($key, $form_state->getValue($key));
+    }
+
  
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
       $form_state->setRedirect('multistep.multistep_english_class_form');
