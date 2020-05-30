@@ -28,7 +28,7 @@ class MultistepInfoForm extends MultistepFormBase {
     $form = parent::buildForm($form, $form_state);
 
     $form['message-step'] = [
-      '#markup' => '<div class="step">' . $this->t('Step 2 of 8') . '</div>',
+      '#markup' => '<div class="step">' . $this->t('Step 2 of 12') . '</div>',
     ];
 
     $form['message-title'] = [
@@ -71,6 +71,8 @@ class MultistepInfoForm extends MultistepFormBase {
       '#return_value' => 1,
       '#required' => FALSE,
     );
+
+  
 
 
     $form['actions']['submit']['#value'] = $this->t('Next');

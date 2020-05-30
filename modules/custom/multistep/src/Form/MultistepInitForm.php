@@ -28,7 +28,7 @@ class MultistepInitForm extends MultistepFormBase {
     $form = parent::buildForm($form, $form_state);
 
     $form['message-step'] = [
-      '#markup' => '<div class="step">' . $this->t('Step 1 of 8') . '</div>',
+      '#markup' => '<div class="step">' . $this->t('Step 1 of 12') . '</div>',
     ];
 
     $form['message-title'] = [

@@ -103,7 +103,7 @@ abstract class MultistepFormBase extends FormBase {
    */
   protected function deleteStore() {
       // better way to do this?
-    $keys = ['first_name', 'last_name', 'student_id', 'grade_level', 'isAP', 'isFund', 'isELD'];
+    $keys = ['first_name', 'last_name', 'student_id', 'grade_level', 'isAP', 'isFund', 'isELD', 'english', 'math', 'ss', 'sci', 'pe', 'health', 'cpe', 'electives', 'vapa', 'lang'];
     foreach ($keys as $key) {
       $this->store->delete($key);
     }

@@ -17,6 +17,7 @@ function multistep_form_alter(&$form, FormStateInterface &$form_state, $form_id)
  }
 
 function multistep_theme($existing, $type, $theme, $path) {
+    $n = 12;
     return [
         'course_list'  => [ 
             'variables' => [
@@ -25,9 +26,131 @@ function multistep_theme($existing, $type, $theme, $path) {
                 'isFund' => NULL,
                 'isELD' => NULL,
                 'results' => NULL,
-                'subject' => NULL
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
+
+        'course_list_math'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
+
+        'course_list_ss'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
+
+        'course_list_sci'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
+
+        'course_list_pe'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
+
+        'course_list_vapa'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
+
+        'course_list_lang'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
+
+        'course_list_health'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
+
+        'course_list_cpe'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
+
+        'course_list_elec'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
+
+        'course_list_health'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
             ]
         ],
 
     ];
 }
+

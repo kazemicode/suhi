@@ -39,6 +39,8 @@ class MultistepEnglishForm extends MultistepFormBase {
     $isAP = $this->store->get('isAP');
 
 
+
+
     
     // $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load()
   
@@ -49,6 +51,11 @@ class MultistepEnglishForm extends MultistepFormBase {
       'field_grade_level'=> $grade_level,
       ]);
   
+      //todo: create a render array for options
+      //$data = array();
+      //foreach ($results as $result){
+      //  $data[] = array('#' . $result->field_course_number[0]->value =>  $result->title[0]->value);
+      //}
   
     
   
@@ -65,15 +72,19 @@ class MultistepEnglishForm extends MultistepFormBase {
 
 
     $form['english_class'] = array(
-      // show entities with entityViewBuilder
-      // create a template to render "view"-like stuff
-      //'#options' =>
-
-
       '#markup' => $output,
-  
     );
 
+    foreach ($results as $result){
+      $form['english'] = array(
+        '#type' => 'radio',
+        '#required' => TRUE,
+        '#title' => $this->t(''),
+        '#default_value' => $this->store->get('english') ? $this->store->get('') : 0,
+        '#return_value' => $result->field_course_number[0]->value,
+      );
+    }
+ 
 
 
     $form['actions']['submit']['#value'] = $this->t('Next');
@@ -90,9 +101,10 @@ class MultistepEnglishForm extends MultistepFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->store->set('english_class', $form_state->getValue('english_class'));
+    $this->store->set('english', $form_state->getValue('english'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
-      //$form_state->setRedirect('multistep.multistep_math_class');
+      drupal_set_message($this->store->get('english'));
+      $form_state->setRedirect('multistep.multistep_math_class_form');
     }
     else {
       $form_state->setRedirect('multistep.multistep_info_form');

@@ -12,7 +12,7 @@ use \Drupal\node\Entity\Node;
 use Drupal\Core\Entity;
 use Drupal\Core\Url;
 
-class MultistepEnglishForm extends MultistepFormBase {
+class MultistepMathForm extends MultistepFormBase {
 
   /**
    * {@inheritdoc}.
@@ -25,9 +25,11 @@ class MultistepEnglishForm extends MultistepFormBase {
    * {@inheritdoc}.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-
     $form = parent::buildForm($form, $form_state);
-    $grad_requirement = 17; // investigate loading dynamically by label
+    $grad_requirement = 15; // investigate loading dynamically by label
+    $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($grad_requirement);
+    $subject = $term->getName();
+
     $bilingual_taxonomy = 21;
     $fundamentals_taxonomy = 22;
     $ap_taxonomy = 12;
@@ -35,6 +37,8 @@ class MultistepEnglishForm extends MultistepFormBase {
     $isELD = $this->store->get('isELD');
     $isFund = $this->store->get('isFund');
     $isAP = $this->store->get('isAP');
+
+
 
 
     
@@ -46,31 +50,41 @@ class MultistepEnglishForm extends MultistepFormBase {
       'field_graduation_requirement' => $grad_requirement, 
       'field_grade_level'=> $grade_level,
       ]);
-
+  
+      //todo: create a render array for options
+      //$data = array();
+      //foreach ($results as $result){
+      //  $data[] = array('#' . $result->field_course_number[0]->value =>  $result->title[0]->value);
+      //}
   
     
   
     $template = [
-      '#theme'=> 'course_list',
+      '#theme'=> 'course_list_math',
       '#grade'=> $grade_level,
       '#results' => $results,
       '#isELD' => $isELD,
       '#isAP' => $isAP,
-      '#isFund' => $isFund
+      '#isFund' => $isFund,
+      '#subject' => $subject
     ];
     $output = \Drupal::service('renderer')->renderPlain($template);
 
 
     $form['math_class'] = array(
-      // show entities with entityViewBuilder
-      // create a template to render "view"-like stuff
-      //'#options' =>
-
-
       '#markup' => $output,
-  
     );
 
+    foreach ($results as $result){
+      $form['math'] = array(
+        '#type' => 'radio',
+        '#required' => TRUE,
+        '#title' => $this->t(''),
+        '#default_value' => $this->store->get('math') ? $this->store->get('') : 0,
+        '#return_value' => $result->field_course_number[0]->value,
+      );
+    }
+ 
 
 
     $form['actions']['submit']['#value'] = $this->t('Next');
@@ -87,14 +101,13 @@ class MultistepEnglishForm extends MultistepFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->store->set('math_class', $form_state->getValue('math_class'));
+    $this->store->set('math', $form_state->getValue('math'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
-      drupal_set_message('submit');
-      //$form_state->setRedirect('multistep.multistep_ss_class_form');
+      drupal_set_message($this->store->get('math'));
+      $form_state->setRedirect('multistep.multistep_ss_class_form');
     }
     else {
       $form_state->setRedirect('multistep.multistep_english_class_form');
-      drupal_set_message('previous');
     }
   }
 }
