@@ -12,6 +12,7 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Session\SessionManagerInterface;
 use Drupal\user\PrivateTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\node\Entity\Node;
 
 abstract class MultistepFormBase extends FormBase {
 
@@ -92,6 +93,84 @@ abstract class MultistepFormBase extends FormBase {
    */
   protected function saveData() {
     // Logic for saving data goes here...
+
+    $english = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('english'), 
+      ]);
+
+    $math = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('math'), 
+      ]);
+    
+    $ss = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('ss'), 
+      ]);
+
+    
+    $sci = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('sci'), 
+      ]);
+
+
+    $pe = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('pe'), 
+      ]);
+
+    
+    $health = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('health'), 
+      ]);
+
+    $cpe = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('cpe'), 
+      ]);
+
+    $vapa = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('vapa'), 
+      ]);
+
+    $lang = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('lang'), 
+      ]);
+      $elective = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+        'type' => 'course',
+        'field_course_number' => $this->store->get('elective'), 
+        ]);
+
+
+
+
+    $node = Node::create([
+      'type' => 'wishlist',
+      'title' => $this->store->get('student_id'),
+      'field_student_id' => $this->store->get('student_id'),
+      'field_first_name' => $this->store->get('first_name'),
+      'field_last_name' => $this->store->get('last_name'),
+      'field_student_grade_level' => $this->store->get('grade_level') + 1,
+      'field_comments' => $this->store->get('comments'),
+      'field_english_course' => $english,
+      'field_math_course' => $math,
+      'field_pe_course' => $pe,
+      'field_social_science_course' => $ss,
+      'field_science_course' => $sci,
+      'field_health_course' => $health,
+      'field_vapa_course' => $vapa,
+      'field_foreign_language_course' => $lang,
+      'field_elective_course_s_' => $elective
+
+    ]);
+
+    $node->save();
+   
     $this->deleteStore();
     drupal_set_message($this->t('The form has been saved.'));
 
@@ -103,7 +182,7 @@ abstract class MultistepFormBase extends FormBase {
    */
   protected function deleteStore() {
       // better way to do this?
-    $keys = ['first_name', 'last_name', 'student_id', 'grade_level', 'isAP', 'isFund', 'isELD', 'english', 'math', 'ss', 'sci', 'pe', 'health', 'cpe', 'electives', 'vapa', 'lang'];
+    $keys = ['first_name', 'last_name', 'student_id', 'grade_level', 'isAP', 'isFund', 'isELD', 'english', 'math', 'ss', 'sci', 'pe', 'health', 'cpe', 'elective', 'vapa', 'lang', 'comments'];
     foreach ($keys as $key) {
       $this->store->delete($key);
     }
