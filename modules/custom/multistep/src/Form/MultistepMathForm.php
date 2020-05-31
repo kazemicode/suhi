@@ -41,8 +41,6 @@ class MultistepMathForm extends MultistepFormBase {
 
 
 
-    
-    // $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load()
   
 
     $results = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
@@ -51,11 +49,6 @@ class MultistepMathForm extends MultistepFormBase {
       'field_grade_level'=> $grade_level,
       ]);
   
-      //todo: create a render array for options
-      //$data = array();
-      //foreach ($results as $result){
-      //  $data[] = array('#' . $result->field_course_number[0]->value =>  $result->title[0]->value);
-      //}
   
     
   
@@ -103,7 +96,6 @@ class MultistepMathForm extends MultistepFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->store->set('math', $form_state->getValue('math'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
-      drupal_set_message($this->store->get('math'));
       $form_state->setRedirect('multistep.multistep_ss_class_form');
     }
     else {

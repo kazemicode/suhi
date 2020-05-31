@@ -94,85 +94,107 @@ abstract class MultistepFormBase extends FormBase {
   protected function saveData() {
     // Logic for saving data goes here...
 
-    $english = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-      'type' => 'course',
-      'field_course_number' => $this->store->get('english'), 
-      ]);
-
-    $math = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-      'type' => 'course',
-      'field_course_number' => $this->store->get('math'), 
-      ]);
-    
-    $ss = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-      'type' => 'course',
-      'field_course_number' => $this->store->get('ss'), 
-      ]);
-
-    
-    $sci = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-      'type' => 'course',
-      'field_course_number' => $this->store->get('sci'), 
-      ]);
-
-
-    $pe = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-      'type' => 'course',
-      'field_course_number' => $this->store->get('pe'), 
-      ]);
-
-    
-    $health = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-      'type' => 'course',
-      'field_course_number' => $this->store->get('health'), 
-      ]);
-
-    $cpe = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-      'type' => 'course',
-      'field_course_number' => $this->store->get('cpe'), 
-      ]);
-
-    $vapa = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-      'type' => 'course',
-      'field_course_number' => $this->store->get('vapa'), 
-      ]);
-
-    $lang = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-      'type' => 'course',
-      'field_course_number' => $this->store->get('lang'), 
-      ]);
-      $elective = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-        'type' => 'course',
-        'field_course_number' => $this->store->get('elective'), 
-        ]);
-
-
-
-
-    $node = Node::create([
+    $node_array = [
       'type' => 'wishlist',
       'title' => $this->store->get('student_id'),
       'field_student_id' => $this->store->get('student_id'),
       'field_first_name' => $this->store->get('first_name'),
       'field_last_name' => $this->store->get('last_name'),
       'field_student_grade_level' => $this->store->get('grade_level') + 1,
-      'field_comments' => $this->store->get('comments'),
-      'field_english_course' => $english,
-      'field_math_course' => $math,
-      'field_pe_course' => $pe,
-      'field_social_science_course' => $ss,
-      'field_science_course' => $sci,
-      'field_health_course' => $health,
-      'field_vapa_course' => $vapa,
-      'field_foreign_language_course' => $lang,
-      'field_elective_course_s_' => $elective
+      'field_comments' => $this->store->get('comments'),];
 
-    ]);
+    $english = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('english'), 
+      ]);
+
+    $node_array += ['field_english_course' => $english];
+
+    $math = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('math'), 
+      ]);
+
+    $node_array += ['field_math_course' => $math];
+
+
+    if( $this->store->get('ss') != 0){
+      $ss = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+        'type' => 'course',
+        'field_course_number' => $this->store->get('ss'), 
+        ]);
+
+      $node_array += ['field_social_science_course' => $ss];
+    }
+
+    if( $this->store->get('sci') != 0){ 
+    $sci = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('sci'), 
+      ]);
+
+      $node_array += ['field_science_course' => $sci];
+
+    }
+
+    if( $this->store->get('pe') != 0){
+    $pe = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('pe'), 
+      ]);
+    $node_array += ['field_pe_course' => $pe];
+    }
+
+
+   if($this->store->get('health') != 0){
+    $health = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('health'), 
+      ]);
+
+    $node_array += ['field_health_course' => $health];
+    }
+
+
+    if( $this->store->get('cpe') != 0){
+    $cpe = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('cpe'), 
+      ]);
+      $node_array += ['field_college_prep_elective' => $cpe];
+    }
+
+    if( $this->store->get('vapa') != 0){
+    $vapa = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('vapa'), 
+      ]);
+      $node_array += ['field_vapa_course' => $vapa];
+    }
+
+
+    if( $this->store->get('lang') != 0){
+    $lang = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('lang'), 
+      ]);
+      $node_array += ['field_foreign_language_course' => $lang];
+    }
+
+
+    $elective = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('elective'), 
+      ]);
+    $node_array += ['field_elective_course_s_' => $elective];
+
+
+    $node = Node::create($node_array);
 
     $node->save();
    
     $this->deleteStore();
-    drupal_set_message($this->t('The form has been saved.'));
+    drupal_set_message($this->t('Your wishlist has been submitted to your counselor.'));
 
   }
 
@@ -181,7 +203,6 @@ abstract class MultistepFormBase extends FormBase {
    * the multistep form.
    */
   protected function deleteStore() {
-      // better way to do this?
     $keys = ['first_name', 'last_name', 'student_id', 'grade_level', 'isAP', 'isFund', 'isELD', 'english', 'math', 'ss', 'sci', 'pe', 'health', 'cpe', 'elective', 'vapa', 'lang', 'comments'];
     foreach ($keys as $key) {
       $this->store->delete($key);

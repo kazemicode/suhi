@@ -103,7 +103,6 @@ class MultistepElectiveForm extends MultistepFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->store->set('elective', $form_state->getValue('elective'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
-      drupal_set_message($this->store->get('elective'));
       $form_state->setRedirect('multistep.multistep_final_form');
     }
     else {

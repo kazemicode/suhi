@@ -103,7 +103,6 @@ class MultistepCPEForm extends MultistepFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->store->set('cpe', $form_state->getValue('cpe'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
-      drupal_set_message($this->store->get('cpe'));
       $form_state->setRedirect('multistep.multistep_elective_class_form');
     }
     else {
