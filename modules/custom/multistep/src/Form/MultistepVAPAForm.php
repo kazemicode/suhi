@@ -80,8 +80,13 @@ class MultistepVAPAForm extends MultistepFormBase {
 
     $form['actions']['submit']['#value'] = $this->t('Next');
     $form['actions']['previous'] = array(
-      '#type' => 'submit',
-      '#value' => $this->t('Previous'),
+      '#type' => 'link',
+      '#title' => $this->t('Previous'),
+      '#attributes' => array(
+        'class' => array('btn', 'btn-primary'),
+      ),
+      '#weight' => 0,
+      '#url' => Url::fromRoute('multistep.multistep_pe_class_form')
      );
 
 
