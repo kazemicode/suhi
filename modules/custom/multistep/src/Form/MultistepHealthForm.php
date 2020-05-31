@@ -51,11 +51,6 @@ class MultistepHealthForm extends MultistepFormBase {
       'field_grade_level'=> $grade_level,
       ]);
   
-      //todo: create a render array for options
-      //$data = array();
-      //foreach ($results as $result){
-      //  $data[] = array('#' . $result->field_course_number[0]->value =>  $result->title[0]->value);
-      //}
   
     
   
@@ -103,7 +98,6 @@ class MultistepHealthForm extends MultistepFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->store->set('health', $form_state->getValue('health'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
-      drupal_set_message($this->store->get('health'));
       $form_state->setRedirect('multistep.multistep_cpe_class_form');
     }
     else {

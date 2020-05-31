@@ -89,3 +89,26 @@
     padding: 1rem;
     background-color: #eeeeee;
 }
+
+.card-custom {
+    padding: 2rem;
+    margin: 2rem;
+
+}
+
+.card-content-custom{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-custom .field__label::after {
+
+    content: ": ";
+    
+}
+
+.card-custom .field__label {
+
+    font-weight: bolder;
+    
+}

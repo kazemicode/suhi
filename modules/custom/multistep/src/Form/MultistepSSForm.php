@@ -38,11 +38,6 @@ class MultistepSSForm extends MultistepFormBase {
     $isFund = $this->store->get('isFund');
     $isAP = $this->store->get('isAP');
 
-
-
-
-    
-    // $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load()
   
 
     $results = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
@@ -51,11 +46,6 @@ class MultistepSSForm extends MultistepFormBase {
       'field_grade_level'=> $grade_level,
       ]);
   
-      //todo: create a render array for options
-      //$data = array();
-      //foreach ($results as $result){
-      //  $data[] = array('#' . $result->field_course_number[0]->value =>  $result->title[0]->value);
-      //}
   
     
   
@@ -103,7 +93,6 @@ class MultistepSSForm extends MultistepFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->store->set('ss', $form_state->getValue('ss'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
-      drupal_set_message($this->store->get('ss'));
       $form_state->setRedirect('multistep.multistep_sci_class_form');
     }
     else {

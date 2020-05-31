@@ -103,7 +103,6 @@ class MultistepLangForm extends MultistepFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->store->set('lang', $form_state->getValue('lang'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
-      drupal_set_message($this->store->get('lang'));
       $form_state->setRedirect('multistep.multistep_health_class_form');
     }
     else {

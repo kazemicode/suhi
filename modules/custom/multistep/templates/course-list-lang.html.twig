@@ -5,7 +5,7 @@
 <h2>Almost done! You need at least two years of {{ subject }}.</h2></div>
 
  <div class="form-instructions">
-<h4>Select a {{ subject }} course or "I've completed my {{ subject }} requirement":</h4></div>
+<h4>Select a {{ subject }} course or that you have met the requirement:</h4></div>
 <fieldset class="form-container js-form-item form-item js-form-wrapper form-group col-auto" data-drupal-selector="edit-prefs" id="edit-prefs">
       <legend>
     <span class="fieldset-legend id="select-one"">Select one:</span>
@@ -19,8 +19,17 @@
     <th>A-G Requirement</th>
   </tr>
 
+  <tr>
+    <td>
+    <div class="js-form-item js-form-type-radio radio form-check js-form-item-lang form-item-lang">
+                <input data-drupal-selector="edit-lang" type="radio" id="edit-lang" name="lang" value="0" class="form-radio form-check-input"> 
+</div></td>
+    <td>World Language requirement already met</td>
+    <td>N/A  </td>
+    <td> N/A </td></tr>
+
 {% for result in results %}
-   {% if (isELD  and "Bilingual" in result.field_other_attributes[0].entity.label ) or (isFund and "Fundamentals" in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
+   {% if (isELD  and "Bilingual" not in result.field_other_attributes[0].entity.label ) or (isFund and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
     <tr>
     <td>
     <div class="js-form-item js-form-type-radio radio form-check js-form-item-lang form-item-lang">

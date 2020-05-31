@@ -77,3 +77,18 @@
      visibility: hidden;
     
  }
+
+ .course-review {
+    border-width: 1rem;
+    padding: 1.5rem;
+    border: solid;
+    border-color: #f8f9fa;
+    position: relative;
+    margin: .5rem;
+ }
+
+ .course-review-item{
+     margin-bottom: 0.5rem;
+     padding-left: 1rem;
+     font-weight: bolder;
+ }

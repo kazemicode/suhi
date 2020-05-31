@@ -21,7 +21,7 @@
   </tr>
 
 {% for result in results %}
-   {% if (isELD  and "Bilingual" in result.field_other_attributes[0].entity.label ) or (isFund and "Fundamentals" in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
+   {% if (isELD  and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isFund and "Fundamentals" in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
     <tr>
     <td>
 
@@ -41,7 +41,7 @@
 
 
   {% elseif  ( not isAP and  not isELD and not isFund and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label  and  "Advanced Placement" not in result.field_other_attributes[0].entity.label ) %}
-  <tr>
+  <tr> <td>
     <div class="js-form-item js-form-type-radio radio form-check js-form-item-math form-item-math">
                 <input data-drupal-selector="edit-math" type="radio" id="edit-math" name="math" value="{{result.field_course_number[0].value}}" class="form-radio form-check-input"> 
 </div></td>
