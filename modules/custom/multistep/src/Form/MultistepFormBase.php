@@ -54,6 +54,7 @@ abstract class MultistepFormBase extends FormBase {
 
     // Base submit action button present on all implementing forms
     $form = array();
+    $form['#cache'] = ['max-age' => 0];
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = array(
       '#type' => 'submit',
