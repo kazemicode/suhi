@@ -8,8 +8,6 @@ namespace Drupal\multistep\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\Session\SessionManagerInterface;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\TempStore\PrivateTempStore;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -22,16 +20,7 @@ abstract class MultistepFormBase extends FormBase {
    */
   protected $tempStoreFactory;
 
-  /**
-   * @var \Drupal\Core\Session\SessionManagerInterface
-   */
-  protected $sessionManager;
-
-  /**
-   * @var \Drupal\Core\Session\AccountInterface
-   */
-  private $currentUser;
-
+  
   /**
    * @var \Drupal\Core\TempStore\PrivateTempStore
    */
@@ -46,9 +35,6 @@ abstract class MultistepFormBase extends FormBase {
    */
   public function __construct(PrivateTempStoreFactory $temp_store_factory, SessionManagerInterface $session_manager, AccountInterface $current_user) {
     $this->tempStoreFactory = $temp_store_factory; // used for temp storage for data private to current user
-    $this->sessionManager = $session_manager; // used to start session for anon users
-    $this->currentUser = $current_user; // allows us to check if the current user is anonymous
-
     $this->store = $this->tempStoreFactory->get('multistep_data');
   }
 
@@ -58,8 +44,6 @@ abstract class MultistepFormBase extends FormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('user.private_tempstore'),
-      $container->get('session_manager'),
-      $container->get('current_user')
     );
   }
 
