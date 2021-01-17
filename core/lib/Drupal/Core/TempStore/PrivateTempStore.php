@@ -129,7 +129,7 @@ class PrivateTempStore {
       $this->requestStack
         ->getCurrentRequest()
         ->getSession()
-        ->set('core.tempstore.private', TRUE);
+        ->set('forced', TRUE);
     }
 
     $key = $this->createkey($key);
