@@ -51,11 +51,6 @@ abstract class MultistepFormBase extends FormBase {
    * {@inheritdoc}.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    // Start a manual session for anonymous users.
-    if ($this->currentUser->isAnonymous() && !isset($_SESSION['multistep_form_holds_session'])) {
-      $_SESSION['multistep_form_holds_session'] = true; 
-      $this->sessionManager->start(); // start session for anon user if one doesn't already exist
-    }
 
     // Base submit action button present on all implementing forms
     $form = array();
