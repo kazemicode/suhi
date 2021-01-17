@@ -63,7 +63,6 @@ abstract class MultistepFormBase extends FormBase {
     );
 
     $form['#attached']['library'][] = 'multistep/multistep_form';
-    $this->store->set('currentUser', $this->currentUser);
     return $form;
   }
 
