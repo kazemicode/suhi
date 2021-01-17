@@ -43,7 +43,7 @@ abstract class MultistepFormBase extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('user.private_tempstore'),
+      $container->get('tempstore.private')
     );
   }
 
