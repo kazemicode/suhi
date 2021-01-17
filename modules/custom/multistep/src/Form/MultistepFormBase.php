@@ -33,7 +33,7 @@ abstract class MultistepFormBase extends FormBase {
    * @param \Drupal\Core\Session\SessionManagerInterface $session_manager
    * @param \Drupal\Core\Session\AccountInterface $current_user
    */
-  public function __construct(PrivateTempStoreFactory $temp_store_factory, SessionManagerInterface $session_manager, AccountInterface $current_user) {
+  public function __construct(PrivateTempStoreFactory $temp_store_factory) {
     $this->tempStoreFactory = $temp_store_factory; // used for temp storage for data private to current user
     $this->store = $this->tempStoreFactory->get('multistep_data');
   }
