@@ -18,6 +18,13 @@
     <th>Description</th>
     <th>A-G Requirement</th>
   </tr>
+  
+    <div class="js-form-item js-form-type-radio radio form-check js-form-item-pe form-item-pe">
+                <input data-drupal-selector="edit-pe" type="radio" id="edit-pe" name="pe" value="0" class="form-radio form-check-input"> 
+</div></td>
+    <td><b>Electives requirement already met</b></td>
+    <td>N/A  </td>
+    <td> N/A </td></tr>
 
 {% for result in results %}
    {% if (isELD  and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isFund and "Bilingual" not in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
