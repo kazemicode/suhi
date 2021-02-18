@@ -19,6 +19,7 @@
     <th>A-G Requirement</th>
   </tr>
   
+  {% if ( (grade+1) > 9) %} 
    <tr>
     <td>
     <div class="js-form-item js-form-type-radio radio form-check js-form-item-cpe form-item-cpe">
@@ -27,6 +28,8 @@
     <td><b>College Prep elective requirement already met</b></td>
     <td>N/A  </td>
     <td> N/A </td></tr>
+    
+    {% endif %}
 
 {% for result in results %}
    {% if result.field_a_g[0] is not null %}
