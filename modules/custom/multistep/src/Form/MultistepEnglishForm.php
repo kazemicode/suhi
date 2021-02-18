@@ -66,7 +66,15 @@ class MultistepEnglishForm extends MultistepFormBase {
       '#markup' => $output,
     );
 
-
+foreach ($results as $result){
+      $form['english'] = array(
+        '#type' => 'radio',
+        '#required' => TRUE,
+        '#title' => $this->t(''),
+        '#default_value' => $this->store->get('english') ? $this->store->get('') : 0,
+        '#return_value' => $result->field_course_number[0]->value,
+      );
+    }
  
 
 
