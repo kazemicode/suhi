@@ -5,7 +5,7 @@
 <h2>You need at least two years of {{ subject }}!</h2></div>
 
  <div class="form-instructions">
-<h4>Select a {{ subject }} course or that you've completed the requirement:</h4></div>
+<h4>Select a {{ subject }} course or that you've completed the requirement <i>(PE requirement is met with passing grades in 9th and 10th grade PE along with passing the PE Fitness Test)</i>:</h4></div>
 <fieldset class="form-container js-form-item form-item js-form-wrapper form-group col-auto" data-drupal-selector="edit-prefs" id="edit-prefs">
       <legend>
     <span class="fieldset-legend id="select-one"">Select one:</span>
@@ -23,7 +23,7 @@
     <div class="js-form-item js-form-type-radio radio form-check js-form-item-pe form-item-pe">
                 <input data-drupal-selector="edit-pe" type="radio" id="edit-pe" name="pe" value="0" class="form-radio form-check-input"> 
 </div></td>
-    <td>PE requirement already met (PE requirement is met with passing grades in 9th and 10th grade PE along with passing the PE Fitness Test)</td>
+    <td><b>PE requirement already met</b></td>
     <td>N/A  </td>
     <td> N/A </td></tr>
 {% for result in results %}
