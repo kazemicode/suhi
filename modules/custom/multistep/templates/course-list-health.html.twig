@@ -1,20 +1,4 @@
-
-  <tr>
-23
-    <td>
-24
-    <div class="js-form-item js-form-type-radio radio form-check js-form-item-health form-item-health">
-25
-                <input data-drupal-selector="edit-health" type="radio" id="edit-health" name="health" value="0" class="form-radio form-check-input"> 
-26
-</div></td>
-27
-    <td>Health requirement already met</td>
-28
-    <td>N/A  </td>
-29
-    <td> N/A </td></tr>
- <div class="step">Step 10 of {{n}}</div>
+<div class="step">Step 10 of {{n}}</div>
 
 <div class="form-header">
 <h2>You'll need to take {{ subject }} before you graduate.</h2></div>
@@ -27,12 +11,18 @@
   </legend>
   <div class="fieldset-wrapper">
 <table style="width:100%">
+
 <tr>
     <th></th>
     <th>Course title</th>
     <th>Description</th>
     <th>A-G Requirement</th>
   </tr>
+  
+  
+  {% if ( (grade+1) < 12) %} 
+  
+  {% endif %}
 
   <tr>
     <td>
@@ -42,6 +32,7 @@
     <td>Health requirement already met</td>
     <td>N/A  </td>
     <td> N/A </td></tr>
+    
 
 {% for result in results %}
    {% if (isELD  and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isFund and "Fundamentals" in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
