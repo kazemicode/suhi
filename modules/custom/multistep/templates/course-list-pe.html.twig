@@ -5,7 +5,8 @@
 <h2>You need at least two years of {{ subject }}!</h2></div>
 
  <div class="form-instructions">
-<h4>Select a {{ subject }} course{% if (grade+1) > 10 %} OR that you've completed the requirement <i>(PE requirement is met with passing grades in 9th and 10th grade PE along with passing the PE Fitness Test)</i>{% endif %}:</h4></div>
+<h4>Select a <span class="name">{{ subject }}</span> course{% if (grade+1) > 10 %} OR that you've completed the requirement:</h4>
+<i>(PE requirement is met with passing grades in 9th and 10th grade PE along with passing the PE Fitness Test)</i>{% endif %}</div>
 <fieldset class="form-container js-form-item form-item js-form-wrapper form-group col-auto" data-drupal-selector="edit-prefs" id="edit-prefs">
       <legend>
     <span class="fieldset-legend id="select-one"">Select one:</span>
