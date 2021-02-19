@@ -5,7 +5,7 @@
 <h2>Let's take a look at {{ subject }} courses. You need at least one year in the same area</h2></div>
 
  <div class="form-instructions">
-<h4>Select a {{ subject }} course or "I've completed my {{ subject }} requirement":</h4></div>
+<h4>Select a {{ subject }} course {% if (grade+1) > 9 %} OR that you've completed the requirement{% endif %}:</h4></div>
 <fieldset class="form-container js-form-item form-item js-form-wrapper form-group col-auto" data-drupal-selector="edit-prefs" id="edit-prefs">
       <legend>
     <span class="fieldset-legend id="select-one"">Select one:</span>
@@ -18,16 +18,16 @@
     <th>Description</th>
     <th>A-G Requirement</th>
   </tr>
-
+{% if (grade+1) > 9 %}
   <tr>
     <td>
     <div class="js-form-item js-form-type-radio radio form-check js-form-item-vapa form-item-vapa">
                 <input data-drupal-selector="edit-vapa" type="radio" id="edit-vapa" name="vapa" value="0" class="form-radio form-check-input"> 
 </div></td>
-    <td>VAPA requirement already met</td>
+    <td><b>VAPA requirement already met</b></td>
     <td>N/A  </td>
     <td> N/A </td></tr>
-
+{% endif %}
 {% for result in results %}
    {% if (isELD  and "Bilingual" not in result.field_other_attributes[0].entity.label ) or (isFund and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
     <tr>
