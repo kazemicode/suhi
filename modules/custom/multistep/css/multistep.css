@@ -92,8 +92,8 @@
      font-weight: bolder;
  }
 
-/* for all screens */
-#content {
+
+.col {
     padding-left: 0px;
 }
 
