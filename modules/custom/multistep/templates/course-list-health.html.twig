@@ -27,21 +27,22 @@
     <div class="js-form-item js-form-type-radio radio form-check js-form-item-health form-item-health">
                 <input data-drupal-selector="edit-health" type="radio" id="edit-health" name="health" value="0" class="form-radio form-check-input"> 
 </div></td>
-    <td>I'd like to take this class another year.</td>
+    <td><b>I'd like to take this class another year.</b></td>
     <td>N/A  </td>
     <td> N/A </td></tr>
   
   {% endif %}
 
+{% if ( (grade+1) > 9) %} 
   <tr>
     <td>
     <div class="js-form-item js-form-type-radio radio form-check js-form-item-health form-item-health">
                 <input data-drupal-selector="edit-health" type="radio" id="edit-health" name="health" value="0" class="form-radio form-check-input"> 
 </div></td>
-    <td>Health requirement already met</td>
+    <td><b>Health requirement already met>/b></td>
     <td>N/A  </td>
     <td> N/A </td></tr>
-    
+ {% endif %}   
 
 {% for result in results %}
    {% if (isELD  and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isFund and "Fundamentals" in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
