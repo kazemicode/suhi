@@ -94,11 +94,18 @@
  }
 
 /* for all screens */
-#info {display: none;}
+#rotate {
+    display: none;
+}
 
-/* only when orientation is in portrait mode */
-@media all and (orientation:portrait) {
-    #info {
-         display: block;
+/* smaller screens */
+@media screen and (max-width: 300px) {
+    #rotate {
+        background-color: rgba(0,0,0,0.5);
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 100%;
     }
 }
