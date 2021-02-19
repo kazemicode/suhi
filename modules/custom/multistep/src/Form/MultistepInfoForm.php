@@ -71,6 +71,14 @@ class MultistepInfoForm extends MultistepFormBase {
       '#return_value' => 1,
       '#required' => FALSE,
     );
+    
+    $form['prefs']['isCP'] = array(
+      '#type' => 'checkbox',
+      '#title' => $this->t('Just show me the regular college prep courses!'),
+      '#return_value' => 1,
+      '#required' => FALSE,
+    );
+
 
   
 
