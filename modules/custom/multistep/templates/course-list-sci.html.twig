@@ -5,7 +5,7 @@
 <h2>You need two years of {{ subject }} courses, but three are recommended!</h2></div>
 
  <div class="form-instructions">
-<h4>Select a {{ subject }} course or "I've completed my {{ subject }} requirement":</h4></div>
+<h4>Select a {{ subject }} course{% if (grade+1) > 10 %} OR that you've completed the requirement{% endif %}:</h4></div>
 <fieldset class="form-container js-form-item form-item js-form-wrapper form-group col-auto" data-drupal-selector="edit-prefs" id="edit-prefs">
       <legend>
     <span class="fieldset-legend id="select-one"">Select one:</span>
@@ -18,16 +18,17 @@
     <th>Description</th>
     <th>A-G Requirement</th>
   </tr>
-
-   <tr>
-    <td>
-    <div class="js-form-item js-form-type-radio radio form-check js-form-item-sci form-item-sci">
-                <input data-drupal-selector="edit-sci" type="radio" id="edit-sci" name="sci" value="0" class="form-radio form-check-input"> 
-</div></td>
-    <td>Science requirement already met</td>
-    <td>N/A  </td>
-    <td> N/A </td></tr>
-
+{% if (grade+1) > 10 %}
+     <tr>
+      <td>
+      <div class="js-form-item js-form-type-radio radio form-check js-form-item-sci form-item-sci">
+                  <input data-drupal-selector="edit-sci" type="radio" id="edit-sci" name="sci" value="0" class="form-radio form-check-input"> 
+    </div>
+    </td>
+      <td>Science requirement already met</td>
+      <td>N/A  </td>
+      <td> N/A </td></tr>
+{% endif %}
 {% for result in results %}
 
 
