@@ -18,14 +18,19 @@
     <th>Description</th>
     <th>A-G Requirement</th>
   </tr>
- <tr>
-    <td>
-    <div class="js-form-item js-form-type-radio radio form-check js-form-item-pe form-item-pe">
-                <input data-drupal-selector="edit-pe" type="radio" id="edit-pe" name="pe" value="0" class="form-radio form-check-input"> 
-</div></td>
-    <td><b>PE requirement already met</b></td>
-    <td>N/A  </td>
-    <td> N/A </td></tr>
+  
+{% if (grade+1) > 10 %}
+   <tr>
+      <td>
+      <div class="js-form-item js-form-type-radio radio form-check js-form-item-pe form-item-pe">
+                  <input data-drupal-selector="edit-pe" type="radio" id="edit-pe" name="pe" value="0" class="form-radio form-check-input"> 
+      </div>
+     </td>
+      <td><b>PE requirement already met</b></td>
+      <td>N/A  </td>
+      <td> N/A </td></tr>
+{% endif %}
+   
 {% for result in results %}
    {% if ("Adapted" not in result.title[0].entity.label )  %}
     <tr>
