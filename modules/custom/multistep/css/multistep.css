@@ -92,3 +92,13 @@
      padding-left: 1rem;
      font-weight: bolder;
  }
+
+/* for all screens */
+#info {display: none;}
+
+/* only when orientation is in portrait mode */
+@media all and (orientation:portrait) {
+    #info {
+         display: block;
+    }
+}
