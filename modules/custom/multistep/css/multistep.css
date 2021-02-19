@@ -26,7 +26,7 @@
 .form-instructions h4::before {
     box-sizing: border-box;
     background-color: var(--red-devil-bright);
-    left: 0;
+    left: -20px;
     top: 0;
     content: '';
     height: 6px;
