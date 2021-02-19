@@ -2,10 +2,10 @@
  <div class="step">Step 8 of {{n}}</div>
 
 <div class="form-header">
-<h2>Let's take a look at <span class="name">{{ subject }}</span> courses. You need at least one year in the same area</h2></div>
+<h2>Let's take a look at {{ subject }} courses. You need at least one year in the same area</h2></div>
 
  <div class="form-instructions">
-<h4>Select a {{ subject }} course {% if (grade+1) > 9 %} OR that you've completed the requirement{% endif %}:</h4></div>
+<h4>Select a <span class="name">{{ subject }}</span> course {% if (grade+1) > 9 %} OR that you've completed the requirement{% endif %}:</h4></div>
 <fieldset class="form-container js-form-item form-item js-form-wrapper form-group col-auto" data-drupal-selector="edit-prefs" id="edit-prefs">
       <legend>
     <span class="fieldset-legend id="select-one"">Select one:</span>
