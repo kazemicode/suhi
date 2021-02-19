@@ -32,7 +32,7 @@
 {% for result in results %}
 
 
-   {% if (isELD  and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isFund and "Fundamentals" in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label) or (92710 not in result.field_course_number[0].value)  %}
+   {% if (isELD  and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isFund and "Fundamentals" in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label) or (result.field_course_number[0].value != 92710)  %}
     <tr>
     <td>
     <div class="js-form-item js-form-type-radio radio form-check js-form-item-sci form-item-sci">
@@ -50,7 +50,7 @@
   </tr>
 
 
-  {% elseif  ( not isAP and  not isELD and not isFund and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label  and  "Advanced Placement" not in result.field_other_attributes[0].entity.label ) or (92710 not in result.field_course_number[0].value)  %}
+  {% elseif  ( not isAP and  not isELD and not isFund and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label  and  "Advanced Placement" not in result.field_other_attributes[0].entity.label ) or (result.field_course_number[0].value != 92710)  %}
   <tr>
     <td>
     <div class="js-form-item js-form-type-radio radio form-check js-form-item-sci form-item-sci">
