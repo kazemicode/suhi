@@ -93,18 +93,7 @@
  }
 
 /* for all screens */
-#rotate {
-    display: none;
+#content {
+    padding-left: 0px;
 }
 
-/* smaller screens */
-@media screen and (max-width: 300px) {
-    #rotate {
-        background-color: rgba(0,0,0,0.5);
-        display: block;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
-}
