@@ -31,7 +31,7 @@
 {% endif %}
 {% for result in results %}
 
-
+ {% if result.field_course_number[0].value != 92710 %}
    {% if (isELD  and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isFund and "Fundamentals" in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
     <tr>
     <td>
@@ -67,6 +67,7 @@
     {% endif %}
   </tr>
   {% endif %}
+ {% endif %}
 {% endfor %}
 </table>
 
