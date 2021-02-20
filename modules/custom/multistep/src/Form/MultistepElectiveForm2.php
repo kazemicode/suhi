@@ -60,7 +60,7 @@ class MultistepElectiveForm2 extends MultistepFormBase {
     
   
     $template = [
-      '#theme'=> 'course_list_elec',
+      '#theme'=> 'course_list_elec2',
       '#grade'=> $grade_level,
       '#results' => $results,
       '#isELD' => $isELD,
