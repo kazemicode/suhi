@@ -1,0 +1,69 @@
+
+ <div class="step">Step 8 of {{n}}</div>
+
+<div class="form-header">
+<h2>Let's take a look at <big>{{ subject }}</big> courses. You need at least one year in the same area</h2></div>
+
+
+<fieldset class="form-container js-form-item form-item js-form-wrapper form-group col-auto" data-drupal-selector="edit-prefs" id="edit-prefs">
+      <legend>
+    <span class="fieldset-legend form-instructions" id="select-one"><h4>🎭 Just in case, select a backup <span class="name">{{ subject }}</span> course {% if (grade+1) > 9 %} OR that you've completed the requirement{% endif %}:</span>
+  </h4></legend>
+  <div class="fieldset-wrapper">
+<table style="width:80%" class="table">
+<tr>
+    <th></th>
+    <th>Course title</th>
+    <th>Description</th>
+    <th>A-G Requirement</th>
+  </tr>
+{% if (grade+1) > 9 %}
+  <tr>
+    <td>
+    <div class="js-form-item js-form-type-radio radio form-check js-form-item-vapa2 form-item-vapa2">
+                <input data-drupal-selector="edit-vapa2" type="radio" id="edit-vapa2" name="vapa2" value="0" class="form-radio form-check-input"> 
+</div></td>
+    <td><b>VAPA requirement already met</b></td>
+    <td>N/A  </td>
+    <td> N/A </td></tr>
+{% endif %}
+{% for result in results %}
+   {% if (isELD  and "Bilingual" not in result.field_other_attributes[0].entity.label ) or (isFund and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
+    <tr>
+    <td>
+    <div class="js-form-item js-form-type-radio radio form-check js-form-item-vapa2 form-item-vapa2">
+                <input data-drupal-selector="edit-vapa2" type="radio" id="edit-vapa2" name="vapa2" value="{{result.field_course_number[0].value}}" class="form-radio form-check-input"> 
+</div></td>
+    <td>{{ result.title[0].value}} ({{result.field_course_number[0].value}})</td>
+    <td>{{ result.body[0].value|striptags}}  </td>
+    <td>
+    {% if result.field_a_g[0] is not null %}
+       
+    {{ result.field_a_g[0].entity.label }} </td>
+    {% else %}
+    Does not fulfill A-G requirements
+    {% endif %}
+  </tr>
+
+
+  {% elseif  ( not isAP and  not isELD and not isFund and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label  and  "Advanced Placement" not in result.field_other_attributes[0].entity.label ) %}
+  <tr>
+    <td>
+    <div class="js-form-item js-form-type-radio radio form-check js-form-item-vapa form-item-vapa">
+                <input data-drupal-selector="edit-vapa" type="radio" id="edit-vapa" name="vapa" value="{{result.field_course_number[0].value}}" class="form-radio form-check-input"> 
+</div></td>
+    <td>{{ result.title[0].value}} ({{result.field_course_number[0].value}})</td>
+    <td>{{ result.body[0].value|striptags}}  </td>
+    <td>
+    {% if result.field_a_g[0] is not null %}
+    {{ result.field_a_g[0].entity.label }}
+
+    {% else %}
+    Does not fulfill A-G requirements
+    {% endif %}
+  </tr>
+  {% endif %}
+{% endfor %}
+</table>
+
+
