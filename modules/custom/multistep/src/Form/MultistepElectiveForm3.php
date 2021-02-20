@@ -106,7 +106,7 @@ class MultistepElectiveForm3 extends MultistepFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->store->set('elective2', $form_state->getValue('elective2'));
+    $this->store->set('elective3', $form_state->getValue('elective3'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
       $form_state->setRedirect('multistep.multistep_final_form');
     }
