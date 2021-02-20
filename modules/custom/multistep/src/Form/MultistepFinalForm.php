@@ -35,7 +35,7 @@ class MultistepFinalForm extends MultistepFormBase {
 
     $english = reset($english);
 
-    $course_review .= $english->title->value . ' (' .  $english->field_course_number->value . ') </div>';
+    $course_review .= '📖 ' . $english->title->value . ' (' .  $english->field_course_number->value . ') </div>';
 
 
 
@@ -46,7 +46,7 @@ class MultistepFinalForm extends MultistepFormBase {
 
     $math = reset($math);
 
-    $course_review .= '<div class="course-review-item">' . $math->title->value . ' (' .  $math->field_course_number->value . ') </div>';
+    $course_review .= '<div class="course-review-item">📏 ' . $math->title->value . ' (' .  $math->field_course_number->value . ') </div>';
 
 
 
@@ -57,7 +57,7 @@ class MultistepFinalForm extends MultistepFormBase {
 
     $ss = reset($ss);
 
-    $course_review .=  '<div class="course-review-item">' . $ss->title->value . ' (' .  $ss->field_course_number->value . ') </div>';
+    $course_review .=  '<div class="course-review-item">🗺️  ' . $ss->title->value . ' (' .  $ss->field_course_number->value . ') </div>';
 
 
     if( $this->store->get('sci') != 0){
@@ -67,7 +67,7 @@ class MultistepFinalForm extends MultistepFormBase {
         ]);
 
       $sci = reset($sci);
-      $course_review .=  '<div class="course-review-item">' . $sci->title->value . ' (' .  $sci->field_course_number->value . ') </div>';
+      $course_review .=  '<div class="course-review-item">🔬 ' . $sci->title->value . ' (' .  $sci->field_course_number->value . ') </div>';
     }
 
 
@@ -79,7 +79,7 @@ class MultistepFinalForm extends MultistepFormBase {
   
       $pe = reset($pe);
 
-      $course_review .=  '<div class="course-review-item">' . $pe->title->value . ' (' .  $pe->field_course_number->value . ') </div>';
+      $course_review .=  '<div class="course-review-item">👟 ' . $pe->title->value . ' (' .  $pe->field_course_number->value . ') </div>';
   }
   
   
@@ -90,7 +90,17 @@ class MultistepFinalForm extends MultistepFormBase {
         ]);
   
       $vapa = reset($vapa);
-      $course_review .=   '<div class="course-review-item">' . $vapa->title->value . ' (' .  $vapa->field_course_number->value . ') </div>';
+      $course_review .=   '<div class="course-review-item">🎭 ' . $vapa->title->value . ' (' .  $vapa->field_course_number->value . ') </div>';
+    }
+    
+    if( $this->store->get('vapa2') != 0){
+      $vapa2 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+        'type' => 'course',
+        'field_course_number' => $this->store->get('vapa2'), 
+        ]);
+  
+      $vapa = reset($vapa2);
+      $course_review .=   '<div class="course-review-item">🎭 ' . $vapa2->title->value . ' (' .  $vapa2->field_course_number->value . ') </div>';
     }
     
 
@@ -102,7 +112,18 @@ class MultistepFinalForm extends MultistepFormBase {
       ]);
 
     $lang = reset($lang);
-    $course_review .= '<div class="course-review-item">' . $lang->title->value . ' (' .  $lang->field_course_number->value . ') </div>';
+    $course_review .= '<div class="course-review-item">🌎 ' . $lang->title->value . ' (' .  $lang->field_course_number->value . ') </div>';
+
+  }
+    
+      if( $this->store->get('lang2') != 0){
+    $lang = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('lang2'), 
+      ]);
+
+    $lang2 = reset($lang2);
+    $course_review .= '<div class="course-review-item">🌎 ' . $lang2->title->value . ' (' .  $lang2->field_course_number->value . ') </div>';
 
   }
 
@@ -114,7 +135,7 @@ if($this->store->get('health') != 0){
       ]);
 
     $health = reset($health);
-    $course_review .=  '<div class="course-review-item">' . $health->title->value . ' (' .  $health->field_course_number->value . ') </div>';
+    $course_review .=  '<div class="course-review-item">💪 ' . $health->title->value . ' (' .  $health->field_course_number->value . ') </div>';
   }
 
 
@@ -127,7 +148,7 @@ if($this->store->get('health') != 0){
       ]);
 
     $elective = reset($elective);
-    $course_review .=  '<div class="course-review-item">' . $elective->title->value . ' (' .  $elective->field_course_number->value . ') </div>';
+    $course_review .=  '<div class="course-review-item">🥇 ' . $elective->title->value . ' (' .  $elective->field_course_number->value . ') </div>';
     
      $elective2 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'course',
@@ -135,7 +156,7 @@ if($this->store->get('health') != 0){
       ]);
 
     $elective2 = reset($elective2);
-    $course_review .=  '<div class="course-review-item">' . $elective2->title->value . ' (' .  $elective2->field_course_number->value . ') </div>';
+    $course_review .=  '<div class="course-review-item">🥈 ' . $elective2->title->value . ' (' .  $elective2->field_course_number->value . ') </div>';
     
     $elective3 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'course',
@@ -143,7 +164,7 @@ if($this->store->get('health') != 0){
       ]);
 
     $elective3 = reset($elective3);
-    $course_review .=  '<div class="course-review-item">' . $elective3->title->value . ' (' .  $elective3->field_course_number->value . ') </div></div>';
+    $course_review .=  '<div class="course-review-item">🥉 ' . $elective3->title->value . ' (' .  $elective3->field_course_number->value . ') </div></div>';
     
     
 
