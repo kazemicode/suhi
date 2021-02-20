@@ -178,7 +178,7 @@ if($this->store->get('health') != 0){
 
     $form['message-instructions'] = [
       '#markup' => '<div class="form-instructions"><h4>'  . $this->store->get('first_name') . ' ' . $this->store->get('last_name') . $this->t('\'s Course Wishlist ') . '</h4></div>' .
-      '<div class="alert alert-secondary" role="alert">Review your courses before submitting. Remember this is a wishlist and you are not guaranteed all the courses you have selected. </div>'
+      '<div class="alert alert-secondary" role="alert">Review your information and course selections before submitting. Remember this is a wishlist and you are not guaranteed all the courses you have selected. Your counselor will do their best to accomodate your preferences.</div>'
     ];
 
     $form['course-review'] = [
@@ -196,7 +196,7 @@ if($this->store->get('health') != 0){
 
     $form['more']['comments'] = [
       '#type' => 'textarea',
-      '#title' => $this->t('Additional comments for your counselor: '),
+      '#title' => $this->t('Anything else you want your counselor to know? Write it here! If not, you can leave this blank. '),
       '#default_value' => $this->store->get('comments') ? $this->store->get('comments') : '',
       '#required' => FALSE,
       '#attributes' => [
