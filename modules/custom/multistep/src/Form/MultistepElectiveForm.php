@@ -95,7 +95,7 @@ class MultistepElectiveForm extends MultistepFormBase {
         'class' => array('btn', 'btn-primary'),
       ),
       '#weight' => 0,
-      '#url' => Url::fromRoute('multistep.multistep_elective_class_form2')
+      '#url' => Url::fromRoute('multistep.multistep_health_class_form')
      );
 
 
@@ -108,10 +108,10 @@ class MultistepElectiveForm extends MultistepFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->store->set('elective', $form_state->getValue('elective'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
-      $form_state->setRedirect('multistep.multistep_final_form');
+      $form_state->setRedirect('multistep.multistep_elective_class_form2');
     }
     else {
-      $form_state->setRedirect('multistep.multistep_elective_class_form2');
+      $form_state->setRedirect('multistep.multistep_health_class_form');
     }
   }
 }
