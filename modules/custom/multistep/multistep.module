@@ -90,8 +90,32 @@ function multistep_theme($existing, $type, $theme, $path) {
                 'n' => $n
             ]
         ],
+        
+         'course_list_vapa2'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
 
         'course_list_lang'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
+        
+         'course_list_lang2'  => [ 
             'variables' => [
                 'grade' => NULL,
                 'isAP' =>  NULL,
@@ -128,6 +152,30 @@ function multistep_theme($existing, $type, $theme, $path) {
         ],
 
         'course_list_elec'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
+        
+        'course_list_elec2'  => [ 
+            'variables' => [
+                'grade' => NULL,
+                'isAP' =>  NULL,
+                'isFund' => NULL,
+                'isELD' => NULL,
+                'results' => NULL,
+                'subject' => NULL,
+                'n' => $n
+            ]
+        ],
+        
+        'course_list_elec3'  => [ 
             'variables' => [
                 'grade' => NULL,
                 'isAP' =>  NULL,
