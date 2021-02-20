@@ -142,7 +142,7 @@ if($this->store->get('health') != 0){
       'field_course_number' => $this->store->get('elective3'), 
       ]);
 
-    $elective = reset($elective3);
+    $elective3 = reset($elective3);
     $course_review .=  '<div class="course-review-item">' . $elective3->title->value . ' (' .  $elective3->field_course_number->value . ') </div></div>';
     
     
