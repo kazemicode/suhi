@@ -49,8 +49,8 @@
   {% elseif  ( not isAP and  not isELD and not isFund and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label  and  "Advanced Placement" not in result.field_other_attributes[0].entity.label ) %}
   <tr>
     <td>
-    <div class="js-form-item js-form-type-radio radio form-check js-form-item-vapa form-item-vapa">
-                <input data-drupal-selector="edit-vapa" type="radio" id="edit-vapa" name="vapa" value="{{result.field_course_number[0].value}}" class="form-radio form-check-input"> 
+    <div class="js-form-item js-form-type-radio radio form-check js-form-item-vapa2 form-item-vapa2">
+                <input data-drupal-selector="edit-vapa2" type="radio" id="edit-vapa2" name="vapa2" value="{{result.field_course_number[0].value}}" class="form-radio form-check-input"> 
 </div></td>
     <td>{{ result.title[0].value}} ({{result.field_course_number[0].value}})</td>
     <td>{{ result.body[0].value|striptags}}  </td>
