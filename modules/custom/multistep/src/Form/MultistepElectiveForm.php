@@ -85,7 +85,12 @@ class MultistepElectiveForm extends MultistepFormBase {
       );
     }
  
-
+    if($this->store->get('grade_level') > 8) {
+      $prev_url = Url::fromRoute('multistep.multistep_health_class_form');
+      }
+      else {
+        $prev_url = Url::fromRoute('multistep.multistep_lang_class_form2');
+      }
 
     $form['actions']['submit']['#value'] = $this->t('Next');
     $form['actions']['previous'] = array(
@@ -95,7 +100,7 @@ class MultistepElectiveForm extends MultistepFormBase {
         'class' => array('btn', 'btn-primary'),
       ),
       '#weight' => 0,
-      '#url' => Url::fromRoute('multistep.multistep_health_class_form')
+      '#url' => $prev_url
      );
 
 
