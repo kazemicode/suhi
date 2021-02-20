@@ -90,7 +90,7 @@ class MultistepHealthForm extends MultistepFormBase {
         'class' => array('btn', 'btn-primary'),
       ),
       '#weight' => 0,
-      '#url' => Url::fromRoute('multistep.multistep_lang_class_form2')
+      '#url' => Url::fromRoute('multistep.multistep_lang_class_form')
      );
 
 
@@ -106,7 +106,7 @@ class MultistepHealthForm extends MultistepFormBase {
       $form_state->setRedirect('multistep.multistep_elective_class_form');
     }
     else {
-      $form_state->setRedirect('multistep.multistep_lang_class_form2');
+      $form_state->setRedirect('multistep.multistep_lang_class_form');
     }
   }
 }
