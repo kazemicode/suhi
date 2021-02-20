@@ -99,7 +99,7 @@ class MultistepFinalForm extends MultistepFormBase {
         'field_course_number' => $this->store->get('vapa2'), 
         ]);
   
-      $vapa = reset($vapa2);
+      $vapa2 = reset($vapa2);
       $course_review .=   '<div class="course-review-item">🎭 ' . $vapa2->title->value . ' (' .  $vapa2->field_course_number->value . ') </div>';
     }
     
