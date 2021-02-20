@@ -135,7 +135,7 @@ if($this->store->get('health') != 0){
       'field_course_number' => $this->store->get('elective2'), 
       ]);
 
-    $elective = reset($elective2);
+    $elective2 = reset($elective2);
     $course_review .=  '<div class="course-review-item">' . $elective2->title->value . ' (' .  $elective2->field_course_number->value . ') </div></div>';
     
     $elective3 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
