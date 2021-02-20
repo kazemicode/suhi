@@ -18,16 +18,7 @@
     <th>Description</th>
     <th>A-G Requirement</th>
   </tr>
-  {% if ( (grade+1) > 9) %} 
-  <tr>
-   <td> <div class="js-form-item js-form-type-radio radio form-check js-form-item-elective form-item-elective">
-    <input data-drupal-selector="edit-elective" type="radio" id="edit-elective" name="elective" value="0" class="form-radio form-check-input"> 
-    </div></td>
-    <td><b>Electives requirement already met</b></td>
-    <td>N/A  </td>
-    <td> N/A </td></tr>
-{% endif %}
-
+  
 {% for result in results %}
    {% if (isELD  and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isFund and "Bilingual" not in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
     <tr>
