@@ -61,11 +61,27 @@ multistep.multistep_vapa_class_form:
     _title: 'SUHI Wizard - VAPA'
   requirements:
     _permission: 'access content'
+   
+multistep.multistep_vapa_class_form2:
+  path: '/courses/vapa2'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepVAPAForm2'
+    _title: 'SUHI Wizard - VAPA'
+  requirements:
+    _permission: 'access content'
 
 multistep.multistep_lang_class_form:
   path: '/courses/lang'
   defaults:
     _form: '\Drupal\multistep\Form\MultistepLangForm'
+    _title: 'SUHI Wizard - World Languages'
+  requirements:
+    _permission: 'access content'
+ 
+ multistep.multistep_lang_class_form2:
+  path: '/courses/lang2'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepLangForm2'
     _title: 'SUHI Wizard - World Languages'
   requirements:
     _permission: 'access content'
@@ -82,6 +98,22 @@ multistep.multistep_elective_class_form:
   path: '/courses/electives'
   defaults:
     _form: '\Drupal\multistep\Form\MultistepElectiveForm'
+    _title: 'SUHI Wizard - Electives'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_elective_class_form2:
+  path: '/courses/electives2'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepElectiveForm2'
+    _title: 'SUHI Wizard - Electives'
+  requirements:
+    _permission: 'access content'
+
+multistep.multistep_elective_class_form3:
+  path: '/courses/electives3'
+  defaults:
+    _form: '\Drupal\multistep\Form\MultistepElectiveForm3'
     _title: 'SUHI Wizard - Electives'
   requirements:
     _permission: 'access content'
