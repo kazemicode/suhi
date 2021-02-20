@@ -136,20 +136,20 @@ abstract class MultistepFormBase extends FormBase {
     }
 
 
-    if( $this->store->get('cpe') != 0){
-    $cpe = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-      'type' => 'course',
-      'field_course_number' => $this->store->get('cpe'), 
-      ]);
-      $node_array += ['field_college_prep_elective' => $cpe];
-    }
-
     if( $this->store->get('vapa') != 0){
     $vapa = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'course',
       'field_course_number' => $this->store->get('vapa'), 
       ]);
       $node_array += ['field_vapa_course' => $vapa];
+    }
+    
+    if( $this->store->get('vapa2') != 0){
+    $vapa2 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('vapa2'), 
+      ]);
+      $node_array += ['field_vapa_course' => $vapa2];
     }
 
 
@@ -160,6 +160,15 @@ abstract class MultistepFormBase extends FormBase {
       ]);
       $node_array += ['field_foreign_language_course' => $lang];
     }
+    
+    
+    if( $this->store->get('lang2') != 0){
+    $lang2 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('lang2'), 
+      ]);
+      $node_array += ['field_world_language_choice_2' => $lang2];
+    }
 
 
     $elective = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
@@ -167,6 +176,18 @@ abstract class MultistepFormBase extends FormBase {
       'field_course_number' => $this->store->get('elective'), 
       ]);
     $node_array += ['field_elective_course_s_' => $elective];
+    
+    $elective2 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('elective2'), 
+      ]);
+    $node_array += ['field_colle' => $elective2];
+    
+    $elective3 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+    'type' => 'course',
+    'field_course_number' => $this->store->get('elective3'), 
+    ]);
+    $node_array += ['field_elective_3' => $elective3]; 
 
 
     $node = Node::create($node_array);
@@ -183,7 +204,7 @@ abstract class MultistepFormBase extends FormBase {
    * the multistep form.
    */
   protected function deleteStore() {
-    $keys = ['first_name', 'last_name', 'student_id', 'grade_level', 'isAP', 'isFund', 'isELD', 'english', 'math', 'ss', 'sci', 'pe', 'health', 'cpe', 'elective', 'vapa', 'lang', 'comments'];
+    $keys = ['first_name', 'last_name', 'student_id', 'grade_level', 'isAP', 'isFund', 'isELD', 'english', 'math', 'ss', 'sci', 'pe', 'health', 'elective', 'elective2', 'elective3', 'vapa', 'vapa2', 'lang', 'lang2', 'comments'];
     foreach ($keys as $key) {
       $this->store->delete($key);
     }
