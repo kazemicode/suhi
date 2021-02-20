@@ -99,7 +99,13 @@ class MultistepVAPAForm extends MultistepFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->store->set('vapa', $form_state->getValue('vapa'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
+      if ($form_state->getValue('vapa') != 0) {
       $form_state->setRedirect('multistep.multistep_vapa_class_form2');
+      }
+      else {
+        $this->store->set('vapa2', $form_state->getValue('vapa'));
+        $form_state->setRedirect('multistep.multistep_lang_class_form');
+      }
     }
     else {
       $form_state->setRedirect('multistep.multistep_pe_class_form');
