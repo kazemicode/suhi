@@ -33,7 +33,7 @@
 {% endif %}
    
 {% for result in results %}
-   {% if ("Adapted" not in result.title[0].entity.label ) or ( (grade+1 == 10) and ("Course I" not in result.title[0].entity.label) ) %}
+   {% if ("Adapted" not in result.title[0].entity.label ) %}
     <tr>
     <td>
     <div class="js-form-item js-form-type-radio radio form-check js-form-item-pe form-item-pe">
