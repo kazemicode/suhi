@@ -113,7 +113,14 @@ class MultistepLangForm extends MultistepFormBase {
       }
       else {
         $this->store->set('lang2', $form_state->getValue('lang'));
-        $form_state->setRedirect('multistep.multistep_elective_class_form');
+        // skip health step if freshman 
+        if ($this->store->get('grade_level') > 8){
+        $form_state->setRedirect('multistep.multistep_health_class_form');
+        }
+        else {
+          $this->store->set('health', 0);
+          $form_state->setRedirect('multistep.multistep_elective_class_form');
+        }
       }
     }
     else {
