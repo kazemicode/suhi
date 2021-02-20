@@ -108,7 +108,13 @@ class MultistepLangForm2 extends MultistepFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->store->set('lang2', $form_state->getValue('lang2'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
+      // skip health step if freshman 
+      if ($grade_level > 8){
       $form_state->setRedirect('multistep.multistep_health_class_form');
+      }
+      else {
+        $form_state->setRedirect('multistep.multistep_elective_class_form');
+      }
     }
     else {
       $form_state->setRedirect('multistep.multistep_lang_class_form');
