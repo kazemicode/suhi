@@ -71,16 +71,16 @@ class MultistepElectiveForm2 extends MultistepFormBase {
     $output = \Drupal::service('renderer')->renderPlain($template);
 
 
-    $form['elective_class'] = array(
+    $form['elective_class2'] = array(
       '#markup' => $output,
     );
 
     foreach ($results as $result){
-      $form['elective'] = array(
+      $form['elective2'] = array(
         '#type' => 'radio',
         '#required' => TRUE,
         '#title' => $this->t(''),
-        '#default_value' => $this->store->get('elective') ? $this->store->get('') : 0,
+        '#default_value' => $this->store->get('elective2') ? $this->store->get('') : 0,
         '#return_value' => $result->field_course_number[0]->value,
       );
     }
