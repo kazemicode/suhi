@@ -149,7 +149,7 @@ abstract class MultistepFormBase extends FormBase {
       'type' => 'course',
       'field_course_number' => $this->store->get('vapa2'), 
       ]);
-      $node_array += ['field_vapa_course' => $vapa2];
+      $node_array += ['field_vapa_course2' => $vapa2];
     }
 
 
