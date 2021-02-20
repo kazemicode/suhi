@@ -18,7 +18,7 @@ class MultistepElectiveForm2 extends MultistepFormBase {
    * {@inheritdoc}.
    */
   public function getFormId() {
-    return 'multistep_elective_class_form';
+    return 'multistep_elective_class_form2';
   }
 
   /**
