@@ -111,7 +111,12 @@ class MultistepElectiveForm extends MultistepFormBase {
       $form_state->setRedirect('multistep.multistep_elective_class_form2');
     }
     else {
+      if($this->store->get('grade_level') > 8) {
       $form_state->setRedirect('multistep.multistep_health_class_form');
+      }
+      else {
+        setRedirect('multistep.multistep_lang_class_form2')
+      }
     }
   }
 }
