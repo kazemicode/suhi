@@ -115,7 +115,7 @@ class MultistepElectiveForm extends MultistepFormBase {
       $form_state->setRedirect('multistep.multistep_health_class_form');
       }
       else {
-        setRedirect('multistep.multistep_lang_class_form2')
+        setRedirect('multistep.multistep_lang_class_form2');
       }
     }
   }
