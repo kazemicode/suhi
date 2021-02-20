@@ -113,7 +113,7 @@ class MultistepLangForm2 extends MultistepFormBase {
       $form_state->setRedirect('multistep.multistep_health_class_form');
       }
       else {
-        $this->store->set('health', 0)
+        $this->store->set('health', 0);
         $form_state->setRedirect('multistep.multistep_elective_class_form');
       }
     }
