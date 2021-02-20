@@ -108,7 +108,7 @@ class MultistepLangForm extends MultistepFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->store->set('lang', $form_state->getValue('lang'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
-      $form_state->setRedirect('multistep.multistep_health_class_form');
+      $form_state->setRedirect('multistep.multistep_lang_class_form2');
     }
     else {
       $form_state->setRedirect('multistep.multistep_vapa_class_form');
