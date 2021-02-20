@@ -78,7 +78,7 @@ multistep.multistep_lang_class_form:
   requirements:
     _permission: 'access content'
  
- multistep.multistep_lang_class_form2:
+multistep.multistep_lang_class_form2:
   path: '/courses/lang2'
   defaults:
     _form: '\Drupal\multistep\Form\MultistepLangForm2'
