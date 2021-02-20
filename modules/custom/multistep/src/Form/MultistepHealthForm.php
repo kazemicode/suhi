@@ -103,7 +103,7 @@ class MultistepHealthForm extends MultistepFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->store->set('health', $form_state->getValue('health'));
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
-      $form_state->setRedirect('multistep.multistep_cpe_class_form');
+      $form_state->setRedirect('multistep.multistep_elective_class_form');
     }
     else {
       $form_state->setRedirect('multistep.multistep_lang_class_form');
