@@ -91,7 +91,7 @@
      padding-left: 1rem;
      font-weight: bolder;
  }
-.form-radio:last-child {
+.form-radio:last-of-type {
   visibility: hidden;
 }
 
