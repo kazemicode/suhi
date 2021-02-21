@@ -27,7 +27,7 @@
                 <input data-drupal-selector="edit-math" type="radio" id="edit-math" name="math" value="{{result.field_course_number[0].value}}" class="form-radio form-check-input"> 
 </div></td>
     <td>{{ result.title[0].value}} ({{result.field_course_number[0].value}})</td>
-    <td>{{ result.body[0].value|striptags}}  </td>
+    <td>{{ result.body[0].value|striptags|raw }}  </td>
     <td>
     {% if result.field_a_g[0] is not null %}
        
@@ -44,7 +44,7 @@
                 <input data-drupal-selector="edit-math" type="radio" id="edit-math" name="math" value="{{result.field_course_number[0].value}}" class="form-radio form-check-input"> 
 </div></td>
     <td>{{ result.title[0].value}} ({{result.field_course_number[0].value}})</td>
-    <td>{{ result.body[0].value|striptags}}  </td>
+    <td>{{ result.body[0].value|striptags|raw }}  </td>
     <td>
     {% if result.field_a_g[0] is not null %}
     {{ result.field_a_g[0].entity.label }}
