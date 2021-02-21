@@ -91,7 +91,8 @@
      padding-left: 1rem;
      font-weight: bolder;
  }
-.form-radio:last-of-type {
+
+input[type="radio"]:last-of-type {
   visibility: hidden;
 }
 
