@@ -92,7 +92,7 @@
      font-weight: bolder;
  }
 
-input[type="radio"] {
+input[type="radio"]:last-of-type {
   visibility: hidden;
 }
 
