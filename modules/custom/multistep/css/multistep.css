@@ -91,6 +91,9 @@
      padding-left: 1rem;
      font-weight: bolder;
  }
+.form-radio:last-child {
+  visibility: hidden;
+}
 
 
 
