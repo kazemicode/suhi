@@ -97,6 +97,12 @@ input[type="radio"]:required  {
 }
 
 /* smaller mobile screens */
+@media screen and (min-width: 501px) {
+.table th:nth-child(4):after {
+    content: " Requirements";
+  }
+
+/* smaller mobile screens */
 @media screen and (max-width: 500px) {
     .form-group {
       margin-left: -2rem;
@@ -112,13 +118,7 @@ input[type="radio"]:required  {
     max-width: 45px;
   }
   
-  .table th:nth-child(4){
-    display: none;
-  }
-  .table th:nth-child(4):before {
-    color: white;
-    content: "A-G";
-  }
+
 }
 
 
