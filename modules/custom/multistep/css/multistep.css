@@ -105,7 +105,6 @@ input[type="radio"]:required  {
   .table td:nth-child(3n), .table th:nth-child(3n) {
     width: 150px;
     max-width: 150px;
-    word-break: break-word;
   }
   
    .table td:nth-child(4n), .table th:nth-child(4n) {
