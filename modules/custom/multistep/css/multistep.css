@@ -113,12 +113,11 @@ input[type="radio"]:required  {
   }
   
   .table th:nth-child(4){
-    visibility: hidden;
+    text-color: rgba(0,0,0,0.51);
   }
   .table th:nth-child(4):before {
-    visibility: visible;
+    text-color: white;
     content: "A-G";
-    background-color: rgba(0,0,0,0.51);
   }
 }
 
