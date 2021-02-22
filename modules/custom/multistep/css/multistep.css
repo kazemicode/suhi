@@ -107,6 +107,8 @@ input[type="radio"]:required  {
 @media screen and (max-width: 500px) {
     .form-container {
       margin-left: -2rem;
+      /* top | right | bottom | left */
+      border-width: 0 0 .5rem 0;
   }
   
   .table td:nth-child(3n), .table th:nth-child(3n) {
