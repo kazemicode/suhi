@@ -111,6 +111,13 @@ input[type="radio"]:required  {
     width: 45px;
     max-width: 45px;
   }
+  
+  .table th:nth-child(4){
+    display: hidden;
+  }
+  .table th:nth-child(4):before {
+    content: "A-G";
+  }
 }
 
 
