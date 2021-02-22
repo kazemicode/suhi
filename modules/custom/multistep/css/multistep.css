@@ -105,7 +105,7 @@ input[type="radio"]:required  {
 
 /* smaller mobile screens */
 @media screen and (max-width: 500px) {
-    .form-group table, .form-group legend {
+    .form-container {
       margin-left: -2rem;
   }
   
