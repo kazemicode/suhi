@@ -39,11 +39,12 @@ class MultistepElectiveForm extends MultistepFormBase {
     $isAP = $this->store->get('isAP');
 
 
-$results =  \Drupal::entityQuery('node')
+$query =  \Drupal::entityQuery('node')
                 ->condition('type', 'course')
                 ->condition('field_graduation_requirement', '$grad_requirement') 
                 ->condition('field_grade_level', '$grade_level')
                 ->sort('title' , 'ASC'); 
+$results = $query->execute();
 
  
   
