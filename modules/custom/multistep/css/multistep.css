@@ -99,7 +99,7 @@ input[type="radio"]:required  {
 /* smaller mobile screens */
 @media screen and (min-width: 501px) {
 .table th:nth-child(4):after {
-    content: " Requirements";
+    content: " Requirement";
   }
 }
 
