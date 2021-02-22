@@ -1,4 +1,4 @@
-:root {
+l:root {
     --red-devil-dark: #6c0000;
     --red-devil-bright: #c01111;
 }
@@ -105,6 +105,7 @@ input[type="radio"]:required  {
   .table td:nth-child(3n), .table th:nth-child(3n) {
     width: 150px;
     max-width: 150px;
+    word-break: break-all;
   }
   
    .table td:nth-child(4n), .table th:nth-child(4n) {
@@ -113,9 +114,7 @@ input[type="radio"]:required  {
   }
   
   .table th:nth-child(4){
-    color: #757575;
-    background-color: #757575;
-    word-break: break-all;
+    margin-right: -20px;
   }
   .table th:nth-child(4):before {
     color: white;
