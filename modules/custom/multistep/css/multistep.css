@@ -116,9 +116,13 @@ input[type="radio"]:required  {
     visibility: hidden;
   }
   .table th:nth-child(4):before {
+    visibility: visible;
     content: "A-G";
+    background-color: rgba(0,0,0,0.51);
   }
 }
 
 
 
+
+  
