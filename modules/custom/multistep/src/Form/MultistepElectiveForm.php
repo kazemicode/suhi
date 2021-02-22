@@ -39,17 +39,20 @@ class MultistepElectiveForm extends MultistepFormBase {
     $isAP = $this->store->get('isAP');
 
 
+$results =  \Drupal::entityQuery('node')
+                ->condition('type', 'course')
+                ->condition('field_graduation_requirement', '$grad_requirement') 
+                ->condition('field_grade_level', '$grade_level')
+                ->sort('title' , 'ASC'); 
 
-
-    
-    // $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load()
+ 
   
 
-    $results = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-      'type' => 'course',
-      'field_graduation_requirement' => $grad_requirement, 
-      'field_grade_level'=> $grade_level,
-      ]);
+   // $results = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+    //  'type' => 'course',
+   //   'field_graduation_requirement' => $grad_requirement, 
+   //   'field_grade_level'=> $grade_level,
+  //    ]);
   
       //todo: create a render array for options
       //$data = array();
