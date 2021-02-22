@@ -39,28 +39,26 @@ class MultistepElectiveForm extends MultistepFormBase {
     $isAP = $this->store->get('isAP');
 
 
-$query =  \Drupal::entityQuery('node')
-                ->condition('type', 'course')
-                ->condition('field_graduation_requirement', '$grad_requirement') 
-                ->condition('field_grade_level', '$grade_level')
-                ->sort('title' , 'ASC'); 
-$results = $query->execute();
+// to do use entityQuery to get sorted results
+//$query =  \Drupal::entityQuery('node')
+ //               ->condition('type', 'course')
+ //               ->condition('field_graduation_requirement', '$grad_requirement') 
+ //               ->condition('field_grade_level', '$grade_level')
+ //               ->sort('title' , 'ASC'); 
+//$ids = $query->execute();
+    
 
- 
+
+
   
 
-   // $results = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-    //  'type' => 'course',
-   //   'field_graduation_requirement' => $grad_requirement, 
-   //   'field_grade_level'=> $grade_level,
-  //    ]);
+    $results = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_graduation_requirement' => $grad_requirement, 
+      'field_grade_level'=> $grade_level,
+      ]);
   
-      //todo: create a render array for options
-      //$data = array();
-      //foreach ($results as $result){
-      //  $data[] = array('#' . $result->field_course_number[0]->value =>  $result->title[0]->value);
-      //}
-  
+   
     
   
     $template = [
