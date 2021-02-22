@@ -25,12 +25,12 @@ l:root {
 
 .form-instructions h4::before {
     box-sizing: border-box;
-    background-color: var(--red-devil-bright);
+    background-color: var(--red-devil-dark);
     left: 0;
     top: 0;
     content: '';
-    height: 6px;
-    width: 113px;
+    height: 5px;
+    width: 300px;
     position: absolute;
  }
 
