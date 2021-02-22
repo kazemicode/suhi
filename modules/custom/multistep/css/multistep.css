@@ -103,8 +103,8 @@ input[type="radio"]:required  {
   }
   
   .table td, .table th:nth-child(3n) {
-    width: 80px;
-    max-width: 80px;
+    width: 100px;
+    max-width: 100px;
 }
 
 
