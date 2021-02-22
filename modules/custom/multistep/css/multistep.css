@@ -115,6 +115,7 @@ input[type="radio"]:required  {
   .table th:nth-child(4){
     color: #757575;
     background-color: #757575;
+    word-break: break-all;
   }
   .table th:nth-child(4):before {
     color: white;
