@@ -102,12 +102,12 @@ input[type="radio"]:required  {
       margin-left: -2rem;
   }
   
-  .table td, .table th:nth-child(3n) {
+  .table td:nth-child(3n), .table th:nth-child(3n) {
     width: 150px;
     max-width: 150px;
   }
   
-   .table td, .table th:nth-child(4n) {
+   .table td:nth-child(4n), .table th:nth-child(4n) {
     width: 45px;
     max-width: 45px;
   }
