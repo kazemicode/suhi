@@ -52,11 +52,11 @@ class MultistepElectiveForm extends MultistepFormBase {
 
 
     
-      $results = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+    $results = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'course',
+      'field_graduation_requirement' => $grad_requirement, 
       'field_grade_level'=> $grade_level,
       ]);
-    
   
    
     
