@@ -150,6 +150,17 @@ if($this->store->get('health') != 0){
     $elective = reset($elective);
     $course_review .=  '<div class="course-review-item">🥇 ' . $elective->title->value . ' (' .  $elective->field_course_number->value . ') </div>';
     
+    
+    if($this->store->get('elective') == 93379){
+    $ss_elective = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('ss_elective'), 
+      ]);
+
+    $ss_elective = reset($ss_elective);
+    $course_review .=  '<div class="course-review-item"> ' . $ss_elective->title->value . ' (' .  $ss_elective->field_course_number->value . ') </div>';
+  }
+    
      $elective2 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'course',
       'field_course_number' => $this->store->get('elective2'), 
@@ -158,13 +169,40 @@ if($this->store->get('health') != 0){
     $elective2 = reset($elective2);
     $course_review .=  '<div class="course-review-item">🥈 ' . $elective2->title->value . ' (' .  $elective2->field_course_number->value . ') </div>';
     
+    if($this->store->get('elective2') == 93379){
+    $ss_elective = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('ss_elective'), 
+      ]);
+
+    $ss_elective = reset($ss_elective);
+    $course_review .=  '<div class="course-review-item"> ' . $ss_elective->title->value . ' (' .  $ss_elective->field_course_number->value . ') </div>';
+  }
+    
     $elective3 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'course',
       'field_course_number' => $this->store->get('elective3'), 
       ]);
 
     $elective3 = reset($elective3);
-    $course_review .=  '<div class="course-review-item">🥉 ' . $elective3->title->value . ' (' .  $elective3->field_course_number->value . ') </div></div>';
+    $course_review .=  '<div class="course-review-item">🥉 ' . $elective3->title->value . ' (' .  $elective3->field_course_number->value . ') </div>'
+      
+   if($this->store->get('elective') == 93379){
+    $ss_elective = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('ss_elective'), 
+      ]);
+
+    $ss_elective = reset($ss_elective);
+    $course_review .=  '<div class="course-review-item"> ' . $ss_elective->title->value . ' (' .  $ss_elective->field_course_number->value . ') </div>';
+  } 
+    
+  $course_review .= '</div>';
+    
+      
+      
+      
+      
     
     
 
