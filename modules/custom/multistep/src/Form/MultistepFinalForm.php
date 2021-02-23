@@ -172,6 +172,17 @@ if($this->store->get('health') != 0){
     $course_review .=  '<div class="course-review-item">🥇 ' . $ss_elective->title->value . ' (' .  $ss_elective->field_course_number->value . ') </div>';
   }
     
+    if($this->store->get('elective') == 94240){
+    $macro = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('macro'), 
+      ]);
+
+    $macro = reset($macro);
+    $course_review .=  '<div class="course-review-item">🥇 ' . $macro->title->value . ' (' .  $macro->field_course_number->value . ') </div>';
+  }
+    
+    
      $elective2 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'course',
       'field_course_number' => $this->store->get('elective2'), 
@@ -188,6 +199,16 @@ if($this->store->get('health') != 0){
 
     $ss_elective = reset($ss_elective);
     $course_review .=  '<div class="course-review-item">🥈 ' . $ss_elective->title->value . ' (' .  $ss_elective->field_course_number->value . ') </div>';
+  }
+    
+    if($this->store->get('elective2') == 94240){
+    $macro = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('macro'), 
+      ]);
+
+    $macro = reset($macro);
+    $course_review .=  '<div class="course-review-item">🥇 ' . $macro->title->value . ' (' .  $macro->field_course_number->value . ') </div>';
   }
     
     $elective3 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
@@ -207,6 +228,16 @@ if($this->store->get('health') != 0){
     $ss_elective = reset($ss_elective);
     $course_review .=  '<div class="course-review-item">🥉 ' . $ss_elective->title->value . ' (' .  $ss_elective->field_course_number->value . ') </div>';
   } 
+    
+    if($this->store->get('elective3') == 94240){
+    $macro = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('macro'), 
+      ]);
+
+    $macro = reset($macro);
+    $course_review .=  '<div class="course-review-item">🥇 ' . $macro->title->value . ' (' .  $macro->field_course_number->value . ') </div>';
+  }
     
   $course_review .= '</div>';
     
