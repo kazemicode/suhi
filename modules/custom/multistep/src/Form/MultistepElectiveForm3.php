@@ -119,13 +119,9 @@ if($grade_level+1 < 12){
       $this->store->set('ss_elective', 95176);
     }
     else if( $form_state->getValue('elective3') == 94240) {
-      $this->store->set('ss_elective',0);
       $this->store->set('macro', 94239);
     }
-    else {
-      $this->store->set('ss_elective', 0);
-      $this->store->set('macro',0);
-    }
+
     
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
       $form_state->setRedirect('multistep.multistep_final_form');
