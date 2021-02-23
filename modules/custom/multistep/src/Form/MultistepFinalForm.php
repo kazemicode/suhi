@@ -185,9 +185,9 @@ if($this->store->get('health') != 0){
       ]);
 
     $elective3 = reset($elective3);
-    $course_review .=  '<div class="course-review-item">🥉 ' . $elective3->title->value . ' (' .  $elective3->field_course_number->value . ') </div>'
+    $course_review .=  '<div class="course-review-item">🥉 ' . $elective3->title->value . ' (' .  $elective3->field_course_number->value . ') </div>';
       
-   if($this->store->get('elective') == 93379){
+   if($this->store->get('elective') == 93379) {
     $ss_elective = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'course',
       'field_course_number' => $this->store->get('ss_elective'), 
