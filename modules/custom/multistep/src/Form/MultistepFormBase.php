@@ -178,18 +178,22 @@ abstract class MultistepFormBase extends FormBase {
       'field_course_number' => $this->store->get('elective'), 
       ]);
     $node_array += ['field_elective_course_s_' => $elective];
-    
+  
+   if( $this->store->get('ss_elective') != 0){
      $ss_elective = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'course',
       'field_course_number' => $this->store->get('ss_elective'), 
       ]);
     $node_array += ['field_single_sem_elective' => $ss_elective];
+   }
     
+   if( $this->store->get('lang') != 0){
     $macro = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'course',
       'field_course_number' => $this->store->get('macro'), 
       ]);
     $node_array += ['field_macro' => $macro];
+   }
     
     $elective2 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'course',
