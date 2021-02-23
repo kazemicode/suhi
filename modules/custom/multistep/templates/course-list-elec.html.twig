@@ -24,7 +24,7 @@
    {% if (isELD  and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isFund and "Bilingual" not in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
     <tr>
     <td>
-     {% if (result.field_course_number[0].value != 95176 ) %}
+     {% if (result.field_course_number[0].value != 95176 and result.field_course_number[0].value != 94240) %}
     <div class="js-form-item js-form-type-radio radio form-check js-form-item-elective form-item-elective">
                 <input data-drupal-selector="edit-elective" type="radio" id="edit-elective" name="elective" value="{{result.field_course_number[0].value}}" class="form-radio form-check-input"> 
  {% endif %}
