@@ -100,8 +100,13 @@ class MultistepSSForm extends MultistepFormBase {
     if($form_state->getValue('ss') == 94188){
       $this->store->set('gov', 94058);
     }
+    else if( $form_state->getValue('ss') == 94240) {
+      $this->store->set('gov',0);
+      $this->store->set('macro',94239);
+    }
    else {
       $this->store->set('gov',0);
+      $this->store->set('macro',0);
     }
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
       $form_state->setRedirect('multistep.multistep_sci_class_form');
