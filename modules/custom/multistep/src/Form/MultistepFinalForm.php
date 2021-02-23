@@ -59,6 +59,22 @@ class MultistepFinalForm extends MultistepFormBase {
 
     $course_review .=  '<div class="course-review-item">🗺️  ' . $ss->title->value . ' (' .  $ss->field_course_number->value . ') </div>';
     
+    if( $this->store->get('ss') == 94240){
+      $macro = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('macro'), 
+      ]);
+
+    $macro = reset($macro);
+    $course_review .=  '<div class="course-review-item">🗺️ ' . $macro->title->value . ' (' .  $macro->field_course_number->value . ') </div>';
+  }
+      
+    
+    
+    
+
+    
+    
      if( $this->store->get('gov') != 0){
         $gov = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
           'type' => 'course',
