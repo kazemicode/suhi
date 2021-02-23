@@ -125,7 +125,6 @@ if($grade_level+1 < 12){
     }
     else {
       $this->store->set('ss_elective', 0);
-      $this->store->set('macro',0);
     }
     
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
