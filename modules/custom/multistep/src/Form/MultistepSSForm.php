@@ -97,6 +97,12 @@ class MultistepSSForm extends MultistepFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->store->set('ss', $form_state->getValue('ss'));
+    if($form_state->getValue('ss') == 94188){
+      $this->store->set('gov', 94058);
+    }
+   else {
+      $this->store->set('gov',0);
+    }
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
       $form_state->setRedirect('multistep.multistep_sci_class_form');
     }
