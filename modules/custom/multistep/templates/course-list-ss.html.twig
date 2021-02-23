@@ -25,6 +25,7 @@
  <div class="js-form-item js-form-type-radio radio form-check js-form-item-ss form-item-ss">
                 <input data-drupal-selector="edit-ss" type="radio" id="edit-ss" name="ss" value="{{result.field_course_number[0].value}}" class="form-radio form-check-input">
                 %}
+                  {% endif %}
 </div></td>
     <td>{{ result.title[0].value}} ({{result.field_course_number[0].value}})</td>
     <td>{{ result.body[0].value|striptags|raw }}  </td>
