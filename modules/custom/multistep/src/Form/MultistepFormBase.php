@@ -106,6 +106,15 @@ abstract class MultistepFormBase extends FormBase {
 
       $node_array += ['field_social_science_course' => $ss];
     }
+    
+    if( $this->store->get('gov') != 0){
+      $gov = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+        'type' => 'course',
+        'field_course_number' => $this->store->get('gov'), 
+        ]);
+
+      $node_array += ['field_government' => $gov];
+    }
 
     if( $this->store->get('sci') != 0){ 
     $sci = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
