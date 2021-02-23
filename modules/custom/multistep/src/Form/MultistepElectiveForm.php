@@ -127,6 +127,7 @@ if($grade_level+1 < 12){
     else if( $form_state->getValue('elective') == 94240) {
       $this->store->set('ss_elective',0);
       $this->store->set('macro', 94239);
+    }
     else {
       $this->store->set('ss_elective', 0);
       $this->store->set('macro',0);
