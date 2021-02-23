@@ -103,7 +103,7 @@ if($grade_level+1 < 12){
         'class' => array('btn', 'btn-primary'),
       ),
       '#weight' => 0,
-      '#url' => Url::fromRoute('multistep.multistep_elective_class_form2')
+      '#url' => Url::fromRoute('multistep.multistep_elective_class_form')
      );
 
 
@@ -127,7 +127,7 @@ if($grade_level+1 < 12){
       $form_state->setRedirect('multistep.multistep_final_form');
     }
     else {
-      $form_state->setRedirect('multistep.multistep_elective_class_form2');
+      $form_state->setRedirect('multistep.multistep_elective_class_form');
     }
   }
 }
