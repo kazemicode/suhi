@@ -130,14 +130,14 @@ if($grade_level+1 < 12){
     }
 
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
-      $form_state->setRedirect('multistep.multistep_elective_class_form1');
+      $form_state->setRedirect('multistep.multistep_elective_class_form2');
     }
     else {
       if($this->store->get('grade_level') > 8) {
       $form_state->setRedirect('multistep.multistep_health_class_form');
       }
       else {
-        $form_state->setRedirect('multistep.multistep_lang_class_form1');
+        $form_state->setRedirect('multistep.multistep_lang_class_form2');
       }
     }
   }
