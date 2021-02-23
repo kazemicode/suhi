@@ -121,6 +121,12 @@ if($grade_level+1 < 12){
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->store->set('elective', $form_state->getValue('elective'));
+    if($form_state->getValue('elective') == 93379) {
+      $this->store->set('ss_elective', 95176);
+    }
+    else {
+      $this->store->set('ss_elective', 0);
+    }
     if($form_state->getTriggeringElement()['#id'] == 'edit-submit') {
       $form_state->setRedirect('multistep.multistep_elective_class_form2');
     }
