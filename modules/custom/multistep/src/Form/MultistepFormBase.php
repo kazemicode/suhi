@@ -177,6 +177,14 @@ abstract class MultistepFormBase extends FormBase {
       ]);
     $node_array += ['field_elective_course_s_' => $elective];
     
+     $ss_elective = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_course_number' => $this->store->get('ss_elective'), 
+      ]);
+    $node_array += ['field_single_sem_elective' => $ss_elective];
+    
+
+    
     $elective2 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'course',
       'field_course_number' => $this->store->get('elective2'), 
@@ -204,7 +212,7 @@ abstract class MultistepFormBase extends FormBase {
    * the multistep form.
    */
   protected function deleteStore() {
-    $keys = ['first_name', 'last_name', 'student_id', 'grade_level', 'isAP', 'isFund', 'isELD', 'english', 'math', 'ss', 'sci', 'pe', 'health', 'elective', 'elective2', 'elective3', 'vapa', 'vapa2', 'lang', 'lang2', 'comments'];
+    $keys = ['first_name', 'last_name', 'student_id', 'grade_level', 'isAP', 'isFund', 'isELD', 'english', 'math', 'ss', 'sci', 'pe', 'health', 'elective', 'elective2', 'elective3', 'ss_elective', 'vapa', 'vapa2', 'lang', 'lang2', 'comments'];
     foreach ($keys as $key) {
       $this->store->delete($key);
     }
