@@ -51,12 +51,19 @@ class MultistepElectiveForm extends MultistepFormBase {
 
 
   
-
+if($grade_level+1 < 12){
     $results = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'course',
       'field_graduation_requirement' => $grad_requirement, 
       'field_grade_level'=> $grade_level,
       ]);
+  }
+    else {
+      $results = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+      'type' => 'course',
+      'field_grade_level'=> $grade_level,
+      ]);
+    } 
   
    
     
