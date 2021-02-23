@@ -143,16 +143,7 @@ class MultistepFinalForm extends MultistepFormBase {
 
   }
     
-      if( $this->store->get('lang2') != 0){
-    $lang2 = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
-      'type' => 'course',
-      'field_course_number' => $this->store->get('lang2'), 
-      ]);
-
-    $lang2 = reset($lang2);
-    $course_review .= '<div class="course-review-item">🌎 ' . $lang2->title->value . ' (' .  $lang2->field_course_number->value . ') </div>';
-
-  }
+ 
 
 
 if($this->store->get('health') != 0){
