@@ -20,6 +20,7 @@
   </tr>
   
 {% for result in results %}
+{% if  ("Elective" in result.field_graduation_requirement[0].entity.label) or ("Advanced" in result.field_other_attributes[0].entity.label)  %}
    {% if (isELD  and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isFund and "Bilingual" not in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
     <tr>
     <td>
@@ -55,6 +56,7 @@
     Does not fulfill A-G requirements
     {% endif %}
   </tr>
+  {% endif %}
   {% endif %}
 {% endfor %}
 </table>
