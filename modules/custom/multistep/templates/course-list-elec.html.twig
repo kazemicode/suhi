@@ -41,7 +41,8 @@
   </tr>
 
 
-  {% elseif  (not isAP and   "Advanced Placement" not in result.field_other_attributes[0].entity.label) or (not isELD and  "Bilingual" not in result.field_other_attributes[0].entity.label) or (not isFund and "Fundamentals" not in result.field_other_attributes[0].entity.label)     %}
+  
+  {% elseif  ( not isAP and  not isELD and not isFund and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label  and  "Advanced Placement" not in result.field_other_attributes[0].entity.label ) %}
   <tr>
     <td>
      {% if (result.field_course_number[0].value != 95176 and result.field_course_number[0].value != 94239) %}
