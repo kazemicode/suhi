@@ -21,7 +21,7 @@
   
 {% for result in results %}
 {% if  ("Elective" in result.field_graduation_requirement[0].entity.label) or ("Advanced" in result.field_other_attributes[0].entity.label)  %}
-   {% if (isELD  and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isFund and "Bilingual" not in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label)  %}
+   {% if (isELD  and "Fundamentals" not in result.field_other_attributes[0].entity.label ) or (isFund and "Bilingual" not in result.field_other_attributes[0].entity.label ) or (isAP and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label and "SPED" not in result.field_other_attributes[0].entity.label)  %}
     <tr>
     <td>
       {% if (result.field_course_number[0].value != 95176 and result.field_course_number[0].value != 94239) %}
@@ -41,7 +41,7 @@
   </tr>
 
 
-  {% elseif  ( not isAP and  not isELD and not isFund and "Fundamentals" not in result.field_other_attributes[0].entity.label  and "Bilingual" not in result.field_other_attributes[0].entity.label  and  "Advanced Placement" not in result.field_other_attributes[0].entity.label ) %}
+  {% elseif  ( not isAP and  not isELD and not isFund and "Fundamentals" not in result.field_other_attributes[0].entity.label and "SPED" not in result.field_other_attributes[0].entity.label and "Bilingual" not in result.field_other_attributes[0].entity.label  and  "Advanced Placement" not in result.field_other_attributes[0].entity.label ) %}
   <tr>
     <td>
     <div class="js-form-item js-form-type-radio radio form-check js-form-item-elective2 form-item-elective2">
