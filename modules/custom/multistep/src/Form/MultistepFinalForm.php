@@ -247,7 +247,7 @@ if($this->store->get('health') != 0){
   }
     
   $course_review .= '</div>';
-    var_dump($ss);
+
       
       
       
