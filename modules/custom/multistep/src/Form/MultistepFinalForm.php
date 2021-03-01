@@ -22,7 +22,7 @@ class MultistepFinalForm extends MultistepFormBase {
    * {@inheritdoc}.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-  var_dump($form);
+  
 
     $form = parent::buildForm($form, $form_state);
 
@@ -247,7 +247,7 @@ if($this->store->get('health') != 0){
   }
     
   $course_review .= '</div>';
-    
+    var_dump($ss);
       
       
       
