@@ -28,6 +28,7 @@ class ComposerStaticInitf0a76219c246ec6fe5f87782734a67c8
         '40360c0b9b437e69bcbb7f1349ce029e' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/parse_cookie_header.php',
         '5a12a5271c58108e0aa33355e6ac54ea' => __DIR__ . '/..' . '/drupal/console-core/src/functions.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        '9e4824c5afbdc1482b6025ce3d4dfde8' => __DIR__ . '/..' . '/league/csv/src/functions_include.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -99,6 +100,10 @@ class ComposerStaticInitf0a76219c246ec6fe5f87782734a67c8
         'M' => 
         array (
             'Masterminds\\' => 12,
+        ),
+        'L' => 
+        array (
+            'League\\Csv\\' => 11,
         ),
         'J' => 
         array (
@@ -324,6 +329,10 @@ class ComposerStaticInitf0a76219c246ec6fe5f87782734a67c8
         'Masterminds\\' => 
         array (
             0 => __DIR__ . '/..' . '/masterminds/html5/src',
+        ),
+        'League\\Csv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/csv/src',
         ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
