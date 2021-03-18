@@ -33,6 +33,7 @@
         "drupal/search_api": "^1.15",
         "drupal/slick": "^2.1",
         "drupal/slick_views": "^2.2",
+        "league/csv": "^9.6",
         "npm-asset/blazy": "^1.8",
         "npm-asset/slick-carousel": "^1.8",
         "oomphinc/composer-installers-extender": "^1.1"

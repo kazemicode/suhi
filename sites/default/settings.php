@@ -77,17 +77,17 @@
  *
  * @code
  * $databases['default']['default'] = [
- *   'database' => 'databasename',
- *   'username' => 'sqlusername',
- *   'password' => 'sqlpassword',
- *   'host' => 'localhost',
- *   'port' => '3306',
- *   'driver' => 'mysql',
- *   'prefix' => '',
- *   'collation' => 'utf8mb4_general_ci',
+   * 'database' => 'kazemicodecom_drupal8',
+   * 'username' => 'drupal8_kazemi',
+   * 'password' => 'Chibi2020!<3',
+   * 'host' => 'mysql.kazemicode.org',
+   * 'port' => '3306',
+   * 'driver' => 'mysql',
+   * 'prefix' => '',
+  *  'collation' => 'utf8mb4_general_ci',
  * ];
  * @endcode
- */
+*/
 $databases = [];
 
 /**
@@ -762,11 +762,11 @@ $settings['entity_update_backup'] = TRUE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'drupal8',
-  'username' => 'drupal8',
-  'password' => 'drupal8',
+  'database' => 'kazemicodecom_drupal8',
+  'username' => 'drupal8_kazemi',
+  'password' => 'Chibi2020!<3',
   'prefix' => '',
-  'host' => 'database',
+  'host' => 'mysql.kazemicode.org',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
