@@ -2,7 +2,7 @@ multistep.multistep_init_form:
   path: '/courses/welcome'
   defaults:
     #_form: '\Drupal\multistep\Form\MultistepInitForm'
-    _controller: '\Drupal\multistep\Controller\MultistepController::redirectTo'
+    _controller: '\Drupal\multistep\Controller\MultistepController::deactivateForm'
     _title: 'SUHI Wizard - Welcome'
   requirements:
     _permission: 'access content'
