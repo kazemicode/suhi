@@ -34,6 +34,8 @@ class MultistepInitForm extends MultistepFormBase {
     $form['message-instructions'] = [
         '#markup' => '<div class="form-instructions"><h4>' . $this->t('Hi! Pre-registration for the ') . $year . $this->t('-') . $nextYear . $this->t(' has closed. Please <a href="https://suhicounseling.blogspot.com/p/contact-us.html">contact your counselor</a> for course change requests.') . '</h4></div>',
     ];
+    
+    return $form;
  }
 }
 
