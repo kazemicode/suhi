@@ -22,6 +22,10 @@ class MultistepInitForm extends MultistepFormBase {
    */
   // this section is uncommented when form is inactive
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $year = date("Y");
+    $nextYear = date("Y") + 1;
+    
+    $form = parent::buildForm($form, $form_state);
 
     $form['message-title'] = [
         '#markup' => '<div class="form-header"><h2>' . $this->t('Pre-registration has closed') . '</h2></div>'
