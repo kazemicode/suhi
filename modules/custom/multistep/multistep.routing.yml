@@ -1,7 +1,7 @@
 multistep.deactivate:
   path: '/courses/welcome'
   defaults:
-    _controller: '\Drupal\multistep\Controller\MultistepController::deactivateForm'
+    _controller: '\Drupal\multistep\Controller\MultistepController::content'
   requirements:
     _permission: 'access content'
 
