@@ -584,6 +584,8 @@ if ($settings['hash_salt']) {
  * issues.
  */
 
+ ini_set('max_execution_time', 0);
+
 /**
  * If you encounter a situation where users post a large amount of text, and
  * the result is stripped out upon viewing but can still be edited, Drupal's
@@ -592,8 +594,8 @@ if ($settings['hash_salt']) {
  * and increase the limits of these variables.  For more information, see
  * http://php.net/manual/pcre.configuration.php.
  */
-# ini_set('pcre.backtrack_limit', 200000);
-# ini_set('pcre.recursion_limit', 200000);
+ ini_set('pcre.backtrack_limit', 200000);
+ ini_set('pcre.recursion_limit', 200000);
 
 /**
  * Configuration overrides.

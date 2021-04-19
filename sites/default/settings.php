@@ -583,6 +583,7 @@ if ($settings['hash_salt']) {
  * Settings defined there should not be duplicated here so as to avoid conflict
  * issues.
  */
+ ini_set('max_execution_time', 0);
 
 /**
  * If you encounter a situation where users post a large amount of text, and
@@ -592,8 +593,8 @@ if ($settings['hash_salt']) {
  * and increase the limits of these variables.  For more information, see
  * http://php.net/manual/pcre.configuration.php.
  */
-# ini_set('pcre.backtrack_limit', 200000);
-# ini_set('pcre.recursion_limit', 200000);
+ ini_set('pcre.backtrack_limit', 200000);
+ ini_set('pcre.recursion_limit', 200000);
 
 /**
  * Configuration overrides.
