@@ -14,7 +14,7 @@ class MultistepController extends ControllerBase {
    * Redirect to
    */
   public function redirectTo() {
-    global $base_url;
+    $base_url = 'https://kazemicode.org/suhi';
 
     $path = '/courses/closed';
 
