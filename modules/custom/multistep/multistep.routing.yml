@@ -1,5 +1,6 @@
 multistep.multistep_init_form:
-  path: '/courses/welcome'
+  # change path to '/courses/welcome' to enable
+  path: '/courses/forminit'
   defaults:
     _form: '\Drupal\multistep\Form\MultistepInitForm'
   
