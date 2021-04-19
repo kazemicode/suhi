@@ -1,18 +1,21 @@
 
 <?php
-
-namespace Drupal\multistep\Controller;
-use Symfony\Component\HttpFoundation\Response;
+namespace Drupal\example\Controller;
+use Drupal\Core\Controller\ControllerBase;
 
 /**
- * A controller that redirects to Form Closed page.
+ * An example controller.
  */
-class MultistepController {
+class ExampleController extends ControllerBase {
 
   /**
-   * Redirect to
+   * Returns a render-able array for a test page.
    */
-  public function deactivateForm() {
-        return new Response('RAWWWWWR!');
-    }
+  public function content() {
+    $build = [
+      '#markup' => $this->t('Hello World!'),
+    ];
+    return $build;
+  }
+
 }
