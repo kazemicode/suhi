@@ -9,4 +9,4 @@ The purpose of this project is to provide a course catalog and scheduling wizard
 
 
 ## Demo
-[YouTube](https://youtu.be/nLtc8uaRlhc)
+- [YouTube](https://youtu.be/nLtc8uaRlhc)
